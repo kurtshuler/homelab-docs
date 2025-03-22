@@ -123,7 +123,7 @@ callouts:
     color: green
   note:
     title: Note
-    color: purple
+    color: red
   warning:
     title: Warning
     color: red
