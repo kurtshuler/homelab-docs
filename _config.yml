@@ -4,6 +4,10 @@ theme: just-the-docs
 
 url: https://kurtshuler.github.io/proxmox-setup-docs/
 
+# Set a path/url to a favicon that will be displayed by the browser
+favicon_ico: "/assets/images/favicon.ico"
+
+
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
 
