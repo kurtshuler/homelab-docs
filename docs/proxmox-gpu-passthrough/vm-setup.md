@@ -70,9 +70,9 @@ VM setup
     Primary GPU: YES
     PCI-Express: YES (requires 'machine: q35' in VM config file)
     ```
-    ![images](/assets/images/iGPU-passthrough-add-pci-device-button-screen.png){:width="75%"}
+    ![images](/../../assets/images/iGPU-passthrough-add-pci-device-button-screen.png){:width="75%"}
 3. Check the results
-    ![images](/assets/images/iGPU-passthrough-add-pci-device-check.png)
+    ![images](/../../assets/images/iGPU-passthrough-add-pci-device-check.png)
 
 ## Turn off VM Display
 
