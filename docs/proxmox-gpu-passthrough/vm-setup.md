@@ -52,15 +52,10 @@ VM setup
 {: .note }
 > These steps can only be done after you have created a VM and only affect that VM.
 
-1. In Proxmox GUI, click `PCI Device`
+1. In Proxmox GUI, open the VM's "PCI Device" settings:
 
-    `pve` &rarr; `[VM#]` <i class="fa fa-long-arrow-right"></i> `Hardware` —> `Add` —> `PCI Device`
-    
-    ```
-    pve —> [VM#] —> Hardware —> Add —> PCI Device
-    ``` 
-    ![images](images/iGPU-passthrough-add-pci-device-button.png)
-   
+    `pve` &rarr; `[VM#]` &rarr; `Hardware` &rarr; `Add` &rarr; `PCI Device`
+    ![images](/assets/images/iGPU-passthrough-add-pci-device-button.png)
 2. In popup, select the following:
 
     ```yaml
@@ -75,20 +70,19 @@ VM setup
     Primary GPU: YES
     PCI-Express: YES (requires 'machine: q35' in VM config file)
     ```
-    ![images](images/iGPU-passthrough-add-pci-device-button-screen.png)
-   
+    ![images](/assets/images/iGPU-passthrough-add-pci-device-button-screen.png){:width="75%"}
 3. Check the results
+    ![images](/assets/images/iGPU-passthrough-add-pci-device-check.png)
 
-    ![images](images/iGPU-passthrough-add-pci-device-check.png)
+## Turn off VM Display
 
-## Turn off `Display`
+1. Turn off the VM "Display" so it will not use the GPU hardware that we have passed through:
 
-1. Click on "Display", then "Edit", and set "Graphic Card" to "none", and press OK.
+    `pve` &rarr; `[VM#]` &rarr; `Hardware` &rarr; `Display` &rarr; `Edit` &rarr; `Graphic Card` &rarr; `none`
 
-{: .note }
-> This will mean that the VM ">_ Console" button on the left sidebar will no longer work. However, you can still access the VM terminal by using the ">_ Console" button on the top nav bar or through SSH.
-
-2. Reboot
+    {: .note }
+    > This will mean that the VM ">_ Console" button on the left sidebar will no longer work. However, you can still access the VM terminal by using the ">_ Console" button on the top nav bar or through SSH.
+2. Reboot the VM
 
 ## Verify iGPU hardware passthough is working in the Ubuntu VM
 
@@ -98,6 +92,9 @@ Run the following commands to confirm your GPU hardware is available for use by 
 
     ```sh
     lspci -k | grep VGA
+    ```
+
+    ```
     lspci -n -s 01:00 -v
     ```
 
@@ -117,4 +114,4 @@ Run the following commands to confirm your GPU hardware is available for use by 
     ls -l /dev/dri/by-path/
     ```
 
-That's it. If all the above check out, your GPU is available within your Ubuntu VM for use for functions like Plex HW transcoding.
+That's it. If all the above check out, your GPU is available within your Ubuntu VM to use for functions like Plex HW transcoding.
