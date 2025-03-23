@@ -17,31 +17,38 @@ Just the Docs has some specific configuration parameters that can be defined in 
 
 ---
 
-## Make a bootable Ventoy USB drive
+## Install Proxmox VE from ISO
+
+Installing Proxmox VE from a Ventoy USB on bare metal is easy. Proxmox documentation with details is at [Proxmox Installation Documentation](https://pve.proxmox.com/pve-docs/chapter-pve-installation.html){:target="_blank"}.
+
+### Make a bootable Ventoy USB drive
+
+First, we need to create bootable USB drive with the Proxmox VE ISO. We will use Ventoy to do this.
 
 The latest Ventoy installers are at [https://sourceforge.net/projects/ventoy/files/](https://sourceforge.net/projects/ventoy/files/){:target="_blank"}.
 
 {: .important }
->Ventoy USB can be created in Linux or Windows only. For **Mac**, use Parallels Windows VM or Linux VM.
+>The Ventoy USB can be created in Linux or Windows only. For **Mac**, use Parallels Windows VM or Linux VM.
 >
 > **After** you have created the Ventoy USB, you can **copy files to it** using your Mac or PC.
 
-Important ISO images to install on Ventoy USB:
+Important downloads and ISO images to install on Ventoy USB are below:
 
 Downloads
 {: .label .label-blue}
 
-   | ISO                                  | URL                                                  |  
+   | Download                                 | URL                                                  |  
    |:-------------------------------------|:-----------------------------------------------------|
+   | Ventoy Installer                     | [https://sourceforge.net/projects/ventoy/files/](https://sourceforge.net/projects/ventoy/files/){:target="_blank"}|
    | System Rescue ISO                    | [https://www.system-rescue.org/Download/](https://www.system-rescue.org/Download/){:target="_blank"}|
    | Proxmox PVE and PBS ISOs             | [https://www.proxmox.com/en/downloads](https://www.proxmox.com/en/downloads){:target="_blank"}|
    | Ubuntu Server Live Install ISO       | [https://releases.ubuntu.com/](https://releases.ubuntu.com/)|
    | Ubuntu Server Cloud-Init Install ISO | [https://cloud-images.ubuntu.com/noble/current/](https://cloud-images.ubuntu.com/noble/current/){:target="_blank"}|
    | Ubuntu Desktop ISO                   | [https://ubuntu.com/download/desktop/](https://ubuntu.com/download/desktop/){:target="_blank"}|
 
+### Boot from USB Drive and Install
 
-## Install Proxmox VE from .iso
-Installing Proxmox VE from the Ventoy USB on bare metal is easy. Proxmox documentation with details is at [Proxmox Installation Documentation](https://pve.proxmox.com/pve-docs/chapter-pve-installation.html){:target="_blank"}.
+If you need a walkthough on how to boot from USB and install, there's one at [https://medium.com/@r00tb33r/how-to-install-proxmox-a-step-by-step-guide-5d00439bc551](https://medium.com/@r00tb33r/how-to-install-proxmox-a-step-by-step-guide-5d00439bc551){:target="_blank"}.
 
 ## Proxmox post-install setup
 
@@ -85,17 +92,111 @@ This script cleans up a lot of cruft after Proxmox installation. Specifically, "
 > [https://ko-fi.com/proxmoxhelperscripts](https://ko-fi.com/proxmoxhelperscripts){:target="_blank"}
 
 tteck's Helper-Scripts are now managed by a group of commuity members.
+
 - Download and install the Proxmox scripts from [https://community-scripts.github.io/ProxmoxVE/](https://community-scripts.github.io/ProxmoxVE/){:target="_blank"}
 <span class="fs-3">
+
 [Proxmox Scripts Webpage](https://community-scripts.github.io/ProxmoxVE/){: .btn }
 </span>
 
 - View the Proxmox scripts source code at [https://github.com/community-scripts/ProxmoxVE/](https://github.com/community-scripts/ProxmoxVE/){:target="_blank"}
 <span class="fs-3">
+
 [Proxmox Scripts Github](https://github.com/community-scripts/ProxmoxVE/){: .btn }
 </span>
 
 The script we want is the "Proxmox VE Post Install" script at [https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install](https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install){:target="_blank"}
+
+### Run tteck's Proxmox VE Processor Microcode Script
+
+{: .warning }
+Run tteck scripts from the **Proxmox GUI shell**, not SSH!
+
+Do
+{: .label .label-green}
+
+```shell
+bash -c "$(wget -qLO - https://github.com/community-scripts/ProxmoxVE/raw/main/misc/microcode.sh)"
+```
+
+Then reboot:
+
+```sh
+reboot
+```
+
+Check whether any microcode updates are currently in effect:
+
+```sh
+journalctl -k | grep -E "microcode" | head -n 1
+```
+
+This procedure updates the microcode on your Intel or AMD processor, if required. Intel and AMD update processor microcode usually to fix bugs and security issues.
+
+### Set up IKoolcore-specific Proxmox summary (OPTIONAL)
+
+{: .note}
+> These instructions are specific to my iKoolcore R2 server hardware. Don't do it if you aren't installing on one.
+
+Follow the steps in the iKoolcore R2 wiki at [https://github.com/KoolCore/Proxmox_VE_Status](https://github.com/KoolCore/Proxmox_VE_Status){:target="_blank"}
+
+Download
+{: .label .label-blue}
+
+Add iKoolcore R2 hardware stats to the Proxmox summary page by downloading and running this shell script that I modified here [https://github.com/kurtshuler/proxmox-ubuntu-server/blob/main/Proxmox%20files/Proxmox_VE_Status_zh.sh](https://github.com/kurtshuler/proxmox-ubuntu-server/blob/main/Proxmox%20files/Proxmox_VE_Status_zh.sh){:target="_blank"}
+
+Do
+{: .label .label-green}
+
+```sh
+cd Proxmox_VE_Status
+```
+
+```sh
+bash ./Proxmox_VE_Status_zh.sh
+```
+
+## Set up the Proxmox terminal
+
+### Install neofetch
+
+```shell
+sudo apt install neofetch
+```
+
+### Install Oh My Bash
+
+```shell
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+```
+
+Reload `.bashrc`
+
+```shell
+source ~/.bashrc
+```
+
+If there is an error loading OMB, set the proper OMB file location in `.bashrc`
+```shell
+export OSH='/root/.oh-my-bash'
+```
+
+### Add plugins and completions to `.bashrc`
+You can edit your `.bashrc` by copying and comparing to my GitHub Proxmox [`.bashrc`](https://github.com/kurtshuler/proxmox-ubuntu-server/blob/main/Proxmox%20files/.bashrc){:target="_blank"}
+
+```shell
+nano .bashrc
+```
+
+Reload `.bashrc`
+
+```shell
+source ~/.bashrc
+```
+
+### Install iTerm shell integration:
+In the iTerm 2 GUI, click on `iTerm2 → Iterm Shell Integration`
+
 
 
 
@@ -144,6 +245,7 @@ search:
 ```
 
 ## Mermaid Diagrams
+
 {: .d-inline-block }
 
 New (v0.4.0)
@@ -193,6 +295,7 @@ heading_anchors: true
 ```
 
 ## External navigation links
+
 {: .d-inline-block }
 
 New (v0.4.0)
@@ -223,7 +326,7 @@ gh_edit_branch: "main" # the branch that your docs is served from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
 ```
 
-_note: `footer_content` is deprecated, but still supported. For a better experience we have moved this into an include called `_includes/footer_custom.html` which will allow for robust markup / liquid-based content._
+*note: `footer_content` is deprecated, but still supported. For a better experience we have moved this into an include called `_includes/footer_custom.html` which will allow for robust markup / liquid-based content.*
 
 - the "page last modified" data will only display if a page has a key called `last_modified_date`, formatted in some readable date format
 - `last_edit_time_format` uses Ruby's DateTime formatter; for examples and information, please refer to the [official Ruby docs on `strftime` formatting](https://docs.ruby-lang.org/en/master/strftime_formatting_rdoc.html)
@@ -258,6 +361,7 @@ jtd.addEvent(toggleDarkMode, 'click', function(){
 See [Customization]({% link docs/customization.md %}) for more information.
 
 ## Callouts
+
 {: .d-inline-block }
 
 New (v0.4.0)
@@ -329,6 +433,7 @@ ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (t
 ```
 
 ### Multiple IDs
+
 {: .d-inline-block .no_toc }
 
 New (v0.4.0)
