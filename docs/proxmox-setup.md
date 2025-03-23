@@ -1,5 +1,5 @@
 ---
-title: Configuration
+title: Proxmox Setup
 nav_order: 1
 ---
 
@@ -33,13 +33,14 @@ The latest Ventoy installers are at https://sourceforge.net/projects/ventoy/file
 logo: "/assets/images/just-the-docs.png"
 ```
 Important ISO images:
-   | ISO                                  | URL                                                                  |
-   |:------------------------------------ |:-------------------------------------------------------------------- |
-   | System Rescue ISO                    | https://www.system-rescue.org/Download/                              |
-   | Proxmox PVE and PBS ISOs             | https://www.proxmox.com/en/downloads                                 |
-   | Ubuntu Server Live Install ISO       | https://releases.ubuntu.com/ |
-   | Ubuntu Server Cloud-Init Install ISO | https://cloud-images.ubuntu.com/noble/current/                       |
-   | Ubuntu DESKTOP ISO                   | https://ubuntu.com/download/desktop/                                 |
+
+   | ISO                                  | URL                                                  |  
+   |:-------------------------------------|:-----------------------------------------------------|
+   | System Rescue ISO                    | https://www.system-rescue.org/Download/              |
+   | Proxmox PVE and PBS ISOs             | https://www.proxmox.com/en/downloads                 |
+   | Ubuntu Server Live Install ISO       | https://releases.ubuntu.com/                         |
+   | Ubuntu Server Cloud-Init Install ISO | https://cloud-images.ubuntu.com/noble/current/       |
+   | Ubuntu DESKTOP ISO                   | https://ubuntu.com/download/desktop/                 |
 
 
 ## Site favicon
