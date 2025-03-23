@@ -55,7 +55,7 @@ VM setup
 1. In Proxmox GUI, open the VM's "PCI Device" settings:
 
     `pve` &rarr; `[VM#]` &rarr; `Hardware` &rarr; `Add` &rarr; `PCI Device`
-    ![images](/../../assets/images/iGPU-passthrough-add-pci-device-button.png)
+    ![images](../../assets/images/iGPU-passthrough-add-pci-device-button.png)
 2. In popup, select the following:
 
     ```yaml
@@ -70,9 +70,9 @@ VM setup
     Primary GPU: YES
     PCI-Express: YES (requires 'machine: q35' in VM config file)
     ```
-    ![images](/../../assets/images/iGPU-passthrough-add-pci-device-button-screen.png){:width="75%"}
+    ![images](../../assets/images/iGPU-passthrough-add-pci-device-button-screen.png){:width="75%"}
 3. Check the results
-    ![images](/../../assets/images/iGPU-passthrough-add-pci-device-check.png)
+    ![images](../../assets/images/iGPU-passthrough-add-pci-device-check.png)
 
 ## Turn off VM Display
 
