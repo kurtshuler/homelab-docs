@@ -1,7 +1,7 @@
 ---
 title: Buttons
 parent: UI Components
-nav_order: 2
+nav_order: 6
 ---
 
 # Buttons
