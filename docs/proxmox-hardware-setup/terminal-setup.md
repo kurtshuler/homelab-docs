@@ -14,9 +14,12 @@ nav_order: 2
 {:toc}
 
 ---
-These instructions are for setting up the terminal for the Proxmox bare metal server, not a Proxmox VM to LXC. I use additional bash alias from Anands Lab when I have a Linux VM or LXC running Docker.
+These instructions are for setting up the terminal for the Proxmox bare metal server, not a Proxmox VM to LXC. I use additional bash aliases from [Anand's SimpleHomelab](https://github.com/SimpleHomelab/docker-traefik/blob/master/shared/config/bash_aliases){:target="_blank"} when I have a Linux VM or LXC running Docker.
 
-### Install neofetch
+Do
+{: .label .label-green}
+
+### Install Neofetch
 
 ```shell
 sudo apt install neofetch

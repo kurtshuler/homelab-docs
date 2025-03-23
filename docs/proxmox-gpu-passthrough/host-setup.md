@@ -7,6 +7,9 @@ nav_order: 1
 # Host Setup: Proxmox GPU Passthrough
 {: .no_toc }
 
+Host setup
+{: .label .label-yellow }
+
 ## Table of contents
 {: .no_toc .text-delta }
 
@@ -33,14 +36,13 @@ nav_order: 1
 {: .note-title }
 > Sources:
 >1. iKoolcore R2 script code at [https://github.com/KoolCore/Proxmox_VE_Status/blob/main/passthrough.sh](https://github.com/KoolCore/Proxmox_VE_Status/blob/main/passthrough.sh){:target="_blank"} 
->2. Craft Computing video at [https://www.youtube.com/watch?v=_hOBAGKLQkI](https://www.youtube.com/watch?v=_hOBAGKLQkI){:target="_blank"}
+>2. Craft Computing's [Proxmox 8.0 - PCIe Passthrough Tutorial](https://www.youtube.com/watch?v=_hOBAGKLQkI){:target="_blank"} video is the best explainer I have seen of this process.
+>3. [Proxmox PCI(e) Passthrough documentation](https://pve.proxmox.com/wiki/PCI(e)_Passthrough){:target="_blank"}
 {: .fs-3 }
 
 I created the steps manually below from the script source code at [https://github.com/KoolCore/Proxmox_VE_Status/blob/main/passthrough.sh](https://github.com/KoolCore/Proxmox_VE_Status/blob/main/passthrough.sh){:target="_blank"}.
 
-Executing the iKoolcore R2 hardware passthrough script as-is at [https://github.com/KoolCore/Proxmox_VE_Status](https://github.com/KoolCore/Proxmox_VE_Status){:target="_blank"} did not work for me. It ran but didn't make the file changes.
-
-Also, the Craft Computing video at [https://www.youtube.com/watch?v=_hOBAGKLQkI](https://www.youtube.com/watch?v=_hOBAGKLQkI){:target="_blank"} follows these steps almost exactly, with the only difference being the changes to `/etc/kernel/cmdline`.
+The Craft Computing video, [Proxmox 8.0 - PCIe Passthrough Tutorial](https://www.youtube.com/watch?v=_hOBAGKLQkI){:target="_blank"}, follows these steps almost exactly, with the only difference being the changes to `/etc/kernel/cmdline`.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_hOBAGKLQkI?si=gKDLccL8bXHdAn2S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -54,16 +56,19 @@ Also, the Craft Computing video at [https://www.youtube.com/watch?v=_hOBAGKLQkI]
 
 I chose to do both the Grub and EFI steps below.
 
-
-### For Grub boot, edit `/etc/default/grub`
 Do
 {: .label .label-green}
+
+### For Grub boot, edit `/etc/default/grub`
+
 1. Open `/etc/default/grub`
+
     ``` sh
     nano /etc/default/grub
     ```
 
 2. Change this line to:
+
     ```sh
     GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt"
     ```
@@ -71,6 +76,7 @@ Do
 3. Save file and close
 
 4. Run:
+
     ```sh
     update-grub
     ```

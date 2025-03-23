@@ -23,6 +23,10 @@ This guide is adapted from Techno Tim's [Set up alerts in Proxmox before it's to
 
 ## Install dependencies
 
+Do
+{: .label .label-green}
+
+
 ### Mailutils and SASL authentication libraries
 
 ```shell
