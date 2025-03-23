@@ -3,7 +3,7 @@ title: Configuration
 nav_order: 1
 ---
 
-# Configuration
+# Proxmox Setup
 {: .no_toc }
 
 Just the Docs has some specific configuration parameters that can be defined in your Jekyll site's \_config.yml file.
@@ -19,12 +19,28 @@ Just the Docs has some specific configuration parameters that can be defined in 
 
 View this site's [\_config.yml](https://github.com/just-the-docs/just-the-docs/tree/main/_config.yml) file as an example.
 
-## Site logo
+## Make a bootable Ventoy USB drive
+
+The latest Ventoy installers are at https://sourceforge.net/projects/ventoy/files/.
+
+{: .important }
+>Ventoy USB can be **created** in Linux or Windows only. For Mac, use Parallels Windows VM or Linux VM.
+>
+> **After** you have created the Ventoy USB, you can **copy files to it** using your Mac or PC.
 
 ```yaml
 # Set a path/url to a logo that will be displayed instead of the title
 logo: "/assets/images/just-the-docs.png"
 ```
+Important ISO images:
+   | ISO                                  | URL                                                                  |
+   |:------------------------------------ |:-------------------------------------------------------------------- |
+   | System Rescue ISO                    | https://www.system-rescue.org/Download/                              |
+   | Proxmox PVE and PBS ISOs             | https://www.proxmox.com/en/downloads                                 |
+   | Ubuntu Server Live Install ISO       | https://releases.ubuntu.com/ |
+   | Ubuntu Server Cloud-Init Install ISO | https://cloud-images.ubuntu.com/noble/current/                       |
+   | Ubuntu DESKTOP ISO                   | https://ubuntu.com/download/desktop/                                 |
+
 
 ## Site favicon
 
