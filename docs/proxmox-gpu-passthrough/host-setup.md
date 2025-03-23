@@ -15,9 +15,18 @@ nav_order: 1
 
 ---
 
+## Warning: iGPU and VM Only!
+
+{: .warning }
+>These server-side or host steps are only for **Intel integrated GPU (iGPU)** passthrough. They will not work as written below with Intel discrete, AMD, or Nvidia GPUs.
+
+{: .warning }
+>These server-side or host steps are only been for passthrough to a **VM**, *not an LXC*.
+>
+> Anand has detailed instructions for LXC passthrough in his excellent article and video, [UDMS Part 11: GPU passthrough on Proxmox LXC for Superior HW Transcoding!](https://www.simplehomelab.com/udms-11-gpu-passthrough-on-proxmox-lxc/){:target="_blank"} 
+
 {: .important }
 >These server-side or host steps can be done before or after you have created a VM.
-
 
 ## Source Information
 
