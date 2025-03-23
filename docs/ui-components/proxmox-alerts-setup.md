@@ -15,13 +15,15 @@ nav_order: 3
 
 ---
 
-## Configure Proxmox alerts
+## Introduction
 
 This guide is adapted from Techno Tim's [Set up alerts in Proxmox before it's too late!](https://technotim.live/posts/proxmox-alerts/){:target="_blank"} article and video.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/85ME8i4Ry6A?si=ao8hFKoFk9i-JuSX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Install dependencies
+## Install dependencies
+
+### Mailutils and SASL authentication libraries
 
 ```shell
 apt update
@@ -32,8 +34,7 @@ apt install -y libsasl2-modules mailutils
 
 [Configure app passwords on your Google account](https://myaccount.google.com/apppasswords){:target="_blank"}
 
-### Configure postfix
-#### Initial setup
+## Configure postfix with new gmail and password
 
 Add your gmail and app password to postfix:
 
@@ -89,7 +90,7 @@ smtp_tls_session_cache_timeout = 3600s
 
 Save the file. 
 
-#### Initial checks
+### Check the gmail email connection
 
 Reload postfix
 
@@ -103,7 +104,7 @@ Send a test email
 echo "This is a test message sent from postfix on my Proxmox Server" | mail -s "Test Email from Proxmox" shulerpve1@gmail.com
 ```
 
-#### Fix the "from" name in email
+## Fix the "from" name in email
 
 Install dependency:
 
@@ -136,7 +137,7 @@ Check the contents of the file:
 cat /etc/postfix/smtp_header_checks.db
 ```
 
-#### Add module to postfix and test
+### Add module to postfix and test
 Add the module to our postfix config:
 
 ```shell
