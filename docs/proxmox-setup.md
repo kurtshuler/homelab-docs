@@ -95,13 +95,11 @@ tteck's Helper-Scripts are now managed by a group of commuity members.
 
 - Download and install the Proxmox scripts from [https://community-scripts.github.io/ProxmoxVE/](https://community-scripts.github.io/ProxmoxVE/){:target="_blank"}
 <span class="fs-3">
-
 [Proxmox Scripts Webpage](https://community-scripts.github.io/ProxmoxVE/){: .btn }
 </span>
 
 - View the Proxmox scripts source code at [https://github.com/community-scripts/ProxmoxVE/](https://github.com/community-scripts/ProxmoxVE/){:target="_blank"}
 <span class="fs-3">
-
 [Proxmox Scripts Github](https://github.com/community-scripts/ProxmoxVE/){: .btn }
 </span>
 
