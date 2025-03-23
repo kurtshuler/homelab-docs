@@ -90,6 +90,10 @@ This script cleans up a lot of cruft after Proxmox installation. Specifically, "
 > </div>
 > The Ko-Fi link is still available if you want to support Angie and tteck's family (unfortunately I never knew his name):
 > [https://ko-fi.com/proxmoxhelperscripts](https://ko-fi.com/proxmoxhelperscripts){:target="_blank"}
+> 
+> <span class="fs-3">
+> [Honor tteck's Contributions!](https://ko-fi.com/proxmoxhelperscripts){: .btn .btn-green}
+> </span>
 
 tteck's Helper-Scripts are now managed by a group of commuity members.
 
