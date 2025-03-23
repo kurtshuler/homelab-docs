@@ -24,7 +24,7 @@ View this site's [\_config.yml](https://github.com/just-the-docs/just-the-docs/t
 The latest Ventoy installers are at https://sourceforge.net/projects/ventoy/files/.
 
 {: .important }
->Ventoy USB can be **created** in Linux or Windows only. For Mac, use Parallels Windows VM or Linux VM.
+>Ventoy USB can be created in Linux or Windows only. For **Mac**, use Parallels Windows VM or Linux VM.
 >
 > **After** you have created the Ventoy USB, you can **copy files to it** using your Mac or PC.
 
@@ -32,15 +32,15 @@ The latest Ventoy installers are at https://sourceforge.net/projects/ventoy/file
 # Set a path/url to a logo that will be displayed instead of the title
 logo: "/assets/images/just-the-docs.png"
 ```
-Important ISO images:
+Important ISO images to install on Ventoy USB:
 
    | ISO                                  | URL                                                  |  
    |:-------------------------------------|:-----------------------------------------------------|
-   | System Rescue ISO                    | https://www.system-rescue.org/Download/              |
-   | Proxmox PVE and PBS ISOs             | https://www.proxmox.com/en/downloads                 |
-   | Ubuntu Server Live Install ISO       | https://releases.ubuntu.com/                         |
-   | Ubuntu Server Cloud-Init Install ISO | https://cloud-images.ubuntu.com/noble/current/       |
-   | Ubuntu DESKTOP ISO                   | https://ubuntu.com/download/desktop/                 |
+   | System Rescue ISO                    | [https://www.system-rescue.org/Download/](https://www.system-rescue.org/Download/)|
+   | Proxmox PVE and PBS ISOs             | [https://www.proxmox.com/en/downloads](https://www.proxmox.com/en/downloads)|
+   | Ubuntu Server Live Install ISO       | [https://releases.ubuntu.com/](https://releases.ubuntu.com/)|
+   | Ubuntu Server Cloud-Init Install ISO | [https://cloud-images.ubuntu.com/noble/current/](https://cloud-images.ubuntu.com/noble/current/)|
+   | Ubuntu Desktop ISO                   | [https://ubuntu.com/download/desktop/](https://ubuntu.com/download/desktop/)|
 
 
 ## Site favicon
