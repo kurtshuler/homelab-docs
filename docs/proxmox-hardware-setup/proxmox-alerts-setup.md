@@ -1,6 +1,6 @@
 ---
 title: Proxmox Alerts Setup
-parent: UI Components
+parent: Proxmox Hardware Setup
 nav_order: 3
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Installation and Post-Install
-parent: UI Components
+parent: Proxmox Hardware Setup
 nav_order: 1
 ---
 
