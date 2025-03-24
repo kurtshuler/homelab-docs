@@ -2,6 +2,7 @@
 title: NUT Client - Synology NAS
 parent: NUT UPS Monitor
 nav_order: 4
+---
 
 # NUT Client - Synology NAS
 {: .no_toc }

@@ -30,11 +30,9 @@ There are many online walkthroughs on how to install NUT Server on a Raspberry P
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/HgKeD4320c0?si=R14OKtKQVtaj1woG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## 📑 Configuration files
+## 📑 Configuration files summary table
 
 After installing and experimenting, I became confused on what files are where and what they do. I have documented my setup below to help.
-
-### Summary table
 
 | File              | Purpose                                                  | File Directory      | On Server? | On Client? |
 |-------------------|-----------------------------------------------------------|---------------------|------------|------------|
