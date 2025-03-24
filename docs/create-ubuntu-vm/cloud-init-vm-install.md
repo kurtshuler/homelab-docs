@@ -27,6 +27,9 @@ I have found tteck's Cloud-Init server installation method to be much faster tha
 >
 >That means we have to **remember to load them** using `sudo apt install sudo linux-generic` after starting the VM for the first time. So follow these instructions to the end of this page!
 
+Do
+{: .label .label-green}
+
 ## Run tteck's Ubuntu 24.04 installation script
 
 We are going to run tteck's Ubuntu 24.04 script found at [https://community-scripts.github.io/ProxmoxVE/scripts?id=ubuntu2404-vm](https://community-scripts.github.io/ProxmoxVE/scripts?id=ubuntu2404-vm){:target="_blank"}
@@ -71,7 +74,7 @@ In the steps below, we are going to follow most of tteck's detailed [Cloud-Init 
 
 This resizes the boot disk but does not allocate it to the VM. We will use `parted` to do that later.
 
-1. Select `xterm.js` under the `Console` pull down for copy/paste functions
+1. Select `xterm.js` under the VM's top nav bar `>_ Console` pull down button for copy/paste functions
 2. Open the 'Resize' screen and enter the size increase you want
  
     `Hardware` &rarr; `Hard Disk (scsi0)` &rarr; `Disk Action` &rarr; `Resize`
@@ -106,9 +109,9 @@ Type these steps in the `xterm.js` console:
 
 3. Then reboot:
 
-```sh
-reboot
-```
+    ```sh
+    reboot
+    ```
 
 ## Enable SSH
 

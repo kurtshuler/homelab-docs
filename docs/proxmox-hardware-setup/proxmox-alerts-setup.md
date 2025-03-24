@@ -7,6 +7,9 @@ nav_order: 3
 # Proxmox Alerts Setup
 {: .no_toc }
 
+Proxmox host setup
+{: .label .label-yellow }
+
 ## Table of contents
 {: .no_toc .text-delta }
 

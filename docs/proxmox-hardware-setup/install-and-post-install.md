@@ -7,6 +7,9 @@ nav_order: 1
 # Installation and Post-Install
 {: .no_toc }
 
+Proxmox host setup
+{: .label .label-yellow }
+
 ## Table of contents
 {: .no_toc .text-delta }
 
@@ -50,10 +53,10 @@ If you need a walkthough on how to boot from USB and install, there's one at [ht
 
 ## Proxmox post-install setup
 
-### Check that SSH is running
-
 Do
 {: .label .label-green}
+
+### Check that SSH is running
 
 ```shell
 systemctl status ssh.service

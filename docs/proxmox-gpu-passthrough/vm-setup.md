@@ -58,6 +58,9 @@ VM setup
 {: .note }
 > These steps can only be done after you have created a VM and only affect that VM.
 
+Do
+{: .label .label-green}
+
 1. In Proxmox GUI, open the VM's "PCI Device" settings:
 
     `pve` &rarr; `[VM#]` &rarr; `Hardware` &rarr; `Add` &rarr; `PCI Device`
