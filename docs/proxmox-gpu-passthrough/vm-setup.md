@@ -18,24 +18,30 @@ VM setup
 
 ---
 
-## Warning: VM and iGPU only!
+## Background and Warnings
 
-{: .warning }
->These VM steps are only for use within a **VM**. See previous section for Proxmox host-side GPU passthrough setup.
->
->These VM steps are only been for passthrough to a **VM**, *not an LXC*.
->
-> Anand has detailed instructions for LXC passthrough in his excellent article and video, [UDMS Part 11: GPU passthrough on Proxmox LXC for Superior HW Transcoding!](https://www.simplehomelab.com/udms-11-gpu-passthrough-on-proxmox-lxc/){:target="_blank"}
+1. First, only perform these steps after you have confirmed that Proxmox GPU passthrough is working on your Proxmox host server. Detailed instructions are in this doc at [Proxmox GPU Passthrough: Host Setup]({% link docs/proxmox-gpu-passthrough/host-setup.md %}).
 
+2. Second, only perform these steps after you have set up the Linux VM. For detailed instructions, see [Create Ubuntu VM: Cloud-Init Ubuntu Install]({% link docs/create-ubuntu-vm/cloud-init-vm-install.md %}) in this doc.
 
-{: .warning }
->These VM steps are only for **Intel integrated GPU (iGPU)** passthrough. They will not work as written below with Intel discrete, AMD, or Nvidia GPUs.
+3. Third, these instuctions work for Intel integrated GPUs, also known as iGPUs.
 
-{: .warning }
->These steps are for a **Linux OS** running in the VM, specifically Ubuntu. For enabling passthrough in a Windows VM, see Derek Seaman's great tutorial, [Proxmox VE 8.3: Windows 11 vGPU (VT-d) Passthrough with Intel Alder Lake](https://www.derekseaman.com/2024/07/proxmox-ve-8-2-windows-11-vgpu-vt-d-passthrough-with-intel-alder-lake.html){:target="_blank"}
+    {: .warning }
+    >These VM steps are only for **Intel integrated GPU (iGPU)** passthrough. They will not work as written below with Intel discrete, AMD, or Nvidia GPUs.
 
+4. Fourth, these instructions do not work with Proxmox LXCs, only VMs.
 
+    {: .warning }
+    >These VM steps are only for use within a **VM**. See previous section for Proxmox host-side GPU passthrough setup.
+    >
+    >These VM steps are only been for passthrough to a **VM**, *not an LXC*.
+    >
+    > Anand has detailed instructions for LXC passthrough in his excellent article and video, [UDMS Part 11: GPU passthrough on Proxmox LXC for Superior HW Transcoding!](https://www.simplehomelab.com/udms-11-gpu-passthrough-on-proxmox-lxc/){:target="_blank"}
 
+5. Finally, these instructions are for Linux OS VMs and will not work on a Windows OS VM.
+
+    {: .warning }
+    >These steps are for a **Linux OS** running in the VM, specifically Ubuntu. For enabling passthrough in a Windows VM, see Derek Seaman's great tutorial, [Proxmox VE 8.3: Windows 11 vGPU (VT-d) Passthrough with Intel Alder Lake](https://www.derekseaman.com/2024/07/proxmox-ve-8-2-windows-11-vgpu-vt-d-passthrough-with-intel-alder-lake.html){:target="_blank"}
 
 ## Source Information
 

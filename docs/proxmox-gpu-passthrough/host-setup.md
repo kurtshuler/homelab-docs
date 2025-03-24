@@ -244,4 +244,9 @@ This ensures nothing else on Proxmox can use the GPU that you want to pass throu
 
 ## Next Step: Setup passthrough within a VM
 
-Once we have confirmed GPU passthough works on the Proxmox VE host, we have to enable it within a VM to use it. Those steps are in the next section.
+Once we have confirmed GPU passthough works on the Proxmox VE host, we have to enable it within a VM to use it. 
+- To create a VM, perform the steps in [Creating a Ubuntu VM]({% link docs/create-ubuntu-vm/index.md %}) 
+- After you have a working VM, perform the steps in [Proxmox GPU (PCI) Passthrough: VM Setup]({% link docs/proxmox-gpu-passthrough/vm-setup.md %}).
+
+
+
