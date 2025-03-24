@@ -7,7 +7,7 @@ nav_order: 1
 # Host Setup: Proxmox GPU Passthrough
 {: .no_toc }
 
-Host setup
+Proxmox host setup
 {: .label .label-yellow }
 
 ## Table of contents

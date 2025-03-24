@@ -26,6 +26,10 @@ I have sometimes had issues where my Linux OS did not mount the Synology NAS NFS
 
 The big issue when this happens is that I will have issues with my Docker media containers and not know why. The second script helps ensure my Synology NAS NFS media shares are connected properly **before** Docker containers that use then are started.
 
+### Safer recovery from power loss
+
+The second script automatically starts my media Docker compose at startup once their NFS shares are connected. This allows for an unattended full restart after power losses.
+
 ## Source Information
 
 My scripts are derived from [Anand's SimpleHomelab scripts](https://github.com/SimpleHomelab/docker-traefik/tree/master/scripts/hs){:target="_blank"}.
@@ -39,7 +43,7 @@ I store them in my `/usr/local/bin/` directory.
 | File        | Location         | Purpose |
 |:-------------|:------------------|:------|
 | check-mounts.sh | /usr/local/bin/ | Gives a simple text confirmation that each share is mounted.  |
-| start-media-after-boot.sh | /usr/local/bin/ | Confirms shares are mounted before running Docker media compose.  |
+| start-media-after-boot.sh | /usr/local/bin/ | Confirms shares are mounted before automatically running Docker media compose at startup. Allows safe restart after power loss and reboot. |
 
 ## `.bashrc` to run these scripts at boot time
 
