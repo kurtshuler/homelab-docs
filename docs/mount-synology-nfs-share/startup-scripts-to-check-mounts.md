@@ -64,6 +64,9 @@ Having them in the `.bashrc` also makes it easier for me to find the script file
 All drives mounted.
 ```
 
+Do
+{: .label .label-green}
+
 ### `check-mounts.sh` source code
 
 Here is the source code for the version of this script running on my Docker media server.
@@ -109,6 +112,9 @@ fi
 
 
 ## Create and use `start-media-after-boot.sh`
+
+Do
+{: .label .label-green}
 
 ### `start-media-after-boot.sh` source code
 
