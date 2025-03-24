@@ -34,7 +34,7 @@ There are many online walkthroughs on how to install NUT Server on a Raspberry P
 
 After installing and experimenting, I became confused on what files are where and what they do. I have documented my setup below to help.
 
-### Summary
+### Summary table
 
 | File              | Purpose                                                  | File Directory      | On Server? | On Client? |
 |-------------------|-----------------------------------------------------------|---------------------|------------|------------|
