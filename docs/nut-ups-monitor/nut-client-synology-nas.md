@@ -4,11 +4,11 @@ parent: NUT UPS Monitor
 nav_order: 4
 ---
 
-# NUT Client - Synology NAS
+# <i class="fas fa-server"></i> NUT Client - Synology NAS
 {: .no_toc }
 
-Synology NAS setup
-{: .label .label-blue }
+<i class="fas fa-server"></i> Synology NAS setup
+{: .label .label-syno }
 
 ## Table of contents
 {: .no_toc .text-delta }

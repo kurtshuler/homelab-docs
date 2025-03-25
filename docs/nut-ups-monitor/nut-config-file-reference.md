@@ -7,14 +7,14 @@ nav_order: 6
 # 📘 Network UPS Tools (NUT) – Configuration File Reference
 {: .no_toc }
 
-NUT UPS setup
-{: .label .label-purple }
+<i class="fas fa-power-off"></i> NUT UPS setup
+{: .label .label-rasp }
 
-Synology NAS setup
-{: .label .label-blue }
+<i class="fas fa-server"></i> Synology NAS setup
+{: .label .label-syno }
 
-Proxmox host setup
-{: .label .label-yellow }
+<i class="fab fa-mixer"></i> Proxmox host setup
+{: .label .label-prox }
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -30,44 +30,44 @@ This guide outlines the configuration files used in NUT, where they are needed (
 
 ---
 
-	## 🖥️ Core Server Configuration Files
+## 🔌  Core Server Configuration Files
 
-	### `ups.conf`
-	- **Purpose**: Defines one or more UPS devices and their drivers.
-	- **Used by**: `upsdrvctl`
-	- **Location**: `/etc/nut/ups.conf`
-	- **Example**:
-	```config
-	[myups]
-	driver = usbhid-ups
-	port = auto
-	desc = "APC Back-UPS"
-	```
+### `ups.conf`
+- **Purpose**: Defines one or more UPS devices and their drivers.
+- **Used by**: `upsdrvctl`
+- **Location**: `/etc/nut/ups.conf`
+- **Example**:
+```config
+[myups]
+driver = usbhid-ups
+port = auto
+desc = "APC Back-UPS"
+```
 
-	---
+---
 
-	### `upsd.conf`
-	- **Purpose**: Configures how the NUT daemon (`upsd`) listens for connections.
-	- **Used by**: `upsd`
-	- **Location**: `/etc/nut/upsd.conf`
-	- **Example**:
-	```config
-	LISTEN 127.0.0.1 3493
-	LISTEN 192.168.1.1 3493
-	```
+### `upsd.conf`
+- **Purpose**: Configures how the NUT daemon (`upsd`) listens for connections.
+- **Used by**: `upsd`
+- **Location**: `/etc/nut/upsd.conf`
+- **Example**:
+```config
+LISTEN 127.0.0.1 3493
+LISTEN 192.168.1.1 3493
+```
 
-	---
+---
 
-	### `upsd.users`
-	- **Purpose**: Defines users and their permissions (e.g., for monitoring or shutdown).
-	- **Used by**: `upsd`
-	- **Location**: `/etc/nut/upsd.users`
-	- **Example**:
-	```config
-	[monuser]
-	password = secret
-	upsmon master
-	```
+### `upsd.users`
+- **Purpose**: Defines users and their permissions (e.g., for monitoring or shutdown).
+- **Used by**: `upsd`
+- **Location**: `/etc/nut/upsd.users`
+- **Example**:
+```config
+[monuser]
+password = secret
+upsmon master
+```
 
 ---
 

@@ -4,11 +4,11 @@ parent: NUT UPS Monitor
 nav_order: 3
 ---
 
-# NUT Client - Proxmox Host
+# <i class="fab fa-mixer"></i> NUT Client - Proxmox Host
 {: .no_toc }
 
-Proxmox host setup
-{: .label .label-yellow }
+<i class="fab fa-mixer"></i> Proxmox host setup
+{: .label .label-prox }
 
 ## Table of contents
 {: .no_toc .text-delta }

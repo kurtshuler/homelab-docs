@@ -1,0 +1,18 @@
+
+// custom label definitiions are in HERE in _sass/custom/custom.scss
+// custom label colors are in _sass/custom/setup.scss
+
+// Raspberry Pi red colored label
+.label-rasp:not(g) {
+    background-color: $rasp-000;
+  }
+
+// Synology blue colored label
+.label-syno:not(g) {
+    background-color: $syno-000;
+  }
+
+// Proxmox orange colored label
+.label-prox:not(g) {
+    background-color: $prox-000;
+  }

@@ -4,11 +4,11 @@ parent: NUT UPS Monitor
 nav_order: 2
 ---
 
-# NUT Server - Raspberry Pi
+# <i class="fas fa-power-off"></i> NUT Server - Raspberry Pi
 {: .no_toc }
 
-NUT UPS setup
-{: .label .label-purple }
+<i class="fas fa-power-off"></i> NUT UPS setup
+{: .label .label-rasp }
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -49,7 +49,7 @@ After installing and experimenting, I became confused on what files are where an
 
 ---
 
-## 🖥️ Raspberry Pi Server Configuration Files
+## 🔌  Raspberry Pi Server Configuration Files
 
 My NUT server configuration is simple because I want my Raspberry Pi to run until it dies if it loses power. My `upsmon.conf` only monitors and doesn't require any triggers to execute for shutdown of the NUT server. Therefore, I don't need `upssched.conf` to define triggers and actions or the `upssched-cmd` script to implement them.
 
