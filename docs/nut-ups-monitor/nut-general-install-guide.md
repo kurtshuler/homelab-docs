@@ -107,10 +107,10 @@ flowchart LR
 
 ## <i class="fab fa-youtube"></i> Techno Tim's walkthrough videos:
   
-### <i class="fas fa-battery-three-quarters"></i> General NUT install
+### <i class="fas fa-battery-three-quarters" style="color: gray"></i> General NUT install
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HgKeD4320c0?si=R14OKtKQVtaj1woG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### <i class="fas fa-power-off"></i> Raspberry PI NUT server install using the [NUTandRpi script](https://github.com/dzomaya/NUTandRpi){:target="_blank"}
+### <i class="fas fa-power-off" style="color: #C51A4A"></i> Raspberry PI NUT server install using the [NUTandRpi script](https://github.com/dzomaya/NUTandRpi){:target="_blank"}
   
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vyBP7wpN72c?si=kGu1ezIWcgKaBJgH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
