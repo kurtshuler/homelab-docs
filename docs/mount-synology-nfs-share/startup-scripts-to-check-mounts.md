@@ -24,7 +24,7 @@ I have sometimes had issues where my Linux OS did not mount the Synology NAS NFS
 
 ### Check mounts before Docker tries to access them
 
-The big issue when this happens is that I will have issues with my Docker media containers and not know why. The second script helps ensure my Synology NAS NFS media shares are connected properly **before** Docker containers that use then are started.
+The big issue when this happens is that I will have issues with my Docker media containers and not know why. The second script helps ensure my Synology NAS NFS media shares are connected properly **before** Docker containers that use them are started.
 
 ### Safer recovery from power loss
 

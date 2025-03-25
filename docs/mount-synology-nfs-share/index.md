@@ -3,7 +3,7 @@ title: Mount Synology NFS Share
 nav_order: 5
 ---
 
-# Mount Synology NFS Share in Linux VM
+# <i class="fas fa-server fa-rotate-90" style="color: black"></i> Mount Synology NFS Share in Linux VM
 {: .no_toc }
 
 <i class="fas fa-server fa-rotate-90" style="color: black"></i> Synology NAS setup
