@@ -3,7 +3,7 @@ title: Proxmox GPU Passthrough
 nav_order: 3
 ---
 
-# Proxmox GPU Passthrough
+# <i class="fas fa-microchip" style="color: #2B66AF"></i> Proxmox GPU Passthrough
 {: .no_toc }
 
 <i class="fab fa-mixer" style="color: black"></i> Proxmox host setup

@@ -3,7 +3,7 @@ title: Create Linux VM
 nav_order: 4
 ---
 
-# Create Ubuntu Linux VM
+# <i class="fab fa-ubuntu" style="color: #E95420"></i> Create Ubuntu Linux VM
 {: .no_toc }
 
 <i class="fab fa-mixer" style="color: #D6762C"></i> Proxmox VM setup
