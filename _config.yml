@@ -1,8 +1,8 @@
-title: Kurt's Proxmox Server Setup Docs
+title: Kurt's Homelab Setup Docs
 description: A fake description 
 theme: just-the-docs
 
-url: https://kurtshuler.github.io/proxmox-setup-docs/
+url: https://kurtshuler.github.io/homelab-docs/
 
 # Set a path/url to a favicon that will be displayed by the browser
 favicon_ico: "/assets/images/favicon.ico"
@@ -69,8 +69,8 @@ heading_anchors: true
 
 # Aux links for the upper right navigation
 aux_links:
-  "Just the Docs on GitHub":
-    - "https://github.com/just-the-docs/just-the-docs"
+  "Clone these docs from GitHub":
+    - "https://github.com/kurtshuler/homelab-docs"
 
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: false
