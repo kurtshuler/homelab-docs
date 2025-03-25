@@ -4,7 +4,7 @@ parent: NUT UPS Monitor
 nav_order: 6
 ---
 
-# 📘 Network UPS Tools (NUT) – Configuration File Reference
+# 📘 NUT Configuration File Reference
 {: .no_toc }
 
 <i class="fas fa-power-off"></i> NUT UPS setup
