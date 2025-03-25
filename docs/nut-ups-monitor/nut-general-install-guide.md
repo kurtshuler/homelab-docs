@@ -4,7 +4,7 @@ parent: NUT UPS Monitor
 nav_order: 1
 ---
 
-# <i class="fas fa-battery-three-quarters"></i> NUT General Install Guide
+# <i class="fas fa-battery-three-quarters" style="color: gray"></i> NUT General Install Guide
 {: .no_toc }
 
 <i class="fas fa-power-off"></i> NUT UPS setup
