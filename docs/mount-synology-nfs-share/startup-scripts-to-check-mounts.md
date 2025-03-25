@@ -7,8 +7,8 @@ nav_order: 3
 # Startup Scripts to Check Mounts
 {: .no_toc }
 
-Ubuntu OS setup
-{: .label .label-red }
+<i class="fab fa-ubuntu"></i> Ubuntu OS setup
+{: .label .label-ubuntu }
 
 ## Table of contents
 {: .no_toc .text-delta }

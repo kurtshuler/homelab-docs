@@ -4,11 +4,11 @@ parent: Proxmox Hardware Setup
 nav_order: 1
 ---
 
-# Installation and Post-Install
+# <i class="fas fa-compact-disc"></i> Installation and Post-Install
 {: .no_toc }
 
-Proxmox host setup
-{: .label .label-yellow }
+<i class="fab fa-mixer" style="color: black"></i> Proxmox host setup
+{: .label .label-proxhost }
 
 ## Table of contents
 {: .no_toc .text-delta }

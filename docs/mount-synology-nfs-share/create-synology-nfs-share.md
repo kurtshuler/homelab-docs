@@ -7,8 +7,8 @@ nav_order: 1
 # Create Synology NFS Share
 {: .no_toc }
 
-Synology NAS setup
-{: .label .label-blue }
+<i class="fas fa-server fa-rotate-90" style="color: black"></i> Synology NAS setup
+{: .label .label-syno }
 
 ## Table of contents
 {: .no_toc .text-delta }

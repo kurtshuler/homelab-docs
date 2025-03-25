@@ -6,11 +6,11 @@ nav_order: 5
 # Mount Synology NFS Share in Linux VM
 {: .no_toc }
 
-Synology NAS setup
-{: .label .label-blue }
+<i class="fas fa-server fa-rotate-90" style="color: black"></i> Synology NAS setup
+{: .label .label-syno }
 
-Ubuntu OS setup
-{: .label .label-red }
+<i class="fab fa-ubuntu"></i> Ubuntu OS setup
+{: .label .label-ubuntu }
 
 Steps to mount a Synology NAS NFS file share to your Ubuntu Linux VM.
 {: .fs-6 .fw-300 }

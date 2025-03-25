@@ -12,7 +12,17 @@
     background-color: $syno-000;
   }
 
-// Proxmox orange colored label
-.label-prox:not(g) {
+// Proxmox Host orange colored label
+.label-proxhost:not(g) {
     background-color: $prox-000;
+  }
+
+// Proxmox VM black colored label
+.label-proxvm:not(g) {
+    background-color: black;
+  }
+
+// Ubuntu OS orange colored label
+.label-ubuntu:not(g) {
+    background-color: $ubun-000;
   }

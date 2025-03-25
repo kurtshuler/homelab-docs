@@ -7,8 +7,8 @@ nav_order: 1
 # Host Setup: Proxmox GPU Passthrough
 {: .no_toc }
 
-Proxmox host setup
-{: .label .label-yellow }
+<i class="fab fa-mixer" style="color: black"></i> Proxmox host setup
+{: .label .label-proxhost }
 
 ## Table of contents
 {: .no_toc .text-delta }

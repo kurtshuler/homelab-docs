@@ -10,11 +10,11 @@ nav_order: 1
 <i class="fas fa-power-off"></i> NUT UPS setup
 {: .label .label-rasp }
 
-<i class="fas fa-server"></i> Synology NAS setup
+<i class="fas fa-server fa-rotate-90" style="color: black"></i> Synology NAS setup
 {: .label .label-syno }
 
-<i class="fab fa-mixer"></i> Proxmox host setup
-{: .label .label-prox }
+<i class="fab fa-mixer" style="color: black"></i> Proxmox host setup
+{: .label .label-proxhost }
 
 I got confused installing NUT. This information helped. Read it before trying to install anything!
 {: .fs-6 .fw-300 }
@@ -39,7 +39,7 @@ I got confused installing NUT. This information helped. Read it before trying to
 
 ---
 
-## NUT Server/Client Interaction Diagram
+## <i class="fas fa-project-diagram"></i> NUT Server/Client Interaction Diagram
 
 I created this detailed diagram of how a Network UPS Tools (NUT) **server** communicates with one or more **clients** because I would become confused troubleshooting my NUT setup. It shows how configuration files and services work together to monitor power status and coordinate safe shutdowns during power events.
 ```mermaid
@@ -97,7 +97,7 @@ flowchart LR
 ### <i class="fas fa-globe"></i> Network Connection:
 - The server's `upsd` listens on port 3493 and sends status updates to `upsmon` processes running on clients.
 
-### <span style="color: #0067E6"><i class="fas fa-server"></i></span><span style="color: #D6762C"> <i class="fab fa-mixer"></i></span> On the NUT Client:
+### <i class="fas fa-server fa-rotate-90" style="color: black"></i> <span style="color: #D6762C"> <i class="fab fa-mixer"></i></span> On the NUT Client:
 - **`nut.conf`**: Declares the client role (`MODE=netclient`).
 - **`upsmon.conf`**: Configures connection to the server and sets the client as a `slave`.
 - **`upsmon`**: Listens to UPS events sent by the server’s `upsd` and initiates shutdowns or logging.
@@ -105,14 +105,13 @@ flowchart LR
 
 ---
 
-## Techno Tim's walkthrough videos:
-
-### General NUT install
-
+## <i class="fab fa-youtube"></i> Techno Tim's walkthrough videos:
+  
+### <i class="fas fa-battery-three-quarters"></i> General NUT install
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HgKeD4320c0?si=R14OKtKQVtaj1woG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Raspberry PI NUT server install using the [NUTandRpi script](https://github.com/dzomaya/NUTandRpi){:target="_blank"} 
-
+### <i class="fas fa-power-off"></i> Raspberry PI NUT server install using the [NUTandRpi script](https://github.com/dzomaya/NUTandRpi){:target="_blank"}
+  
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vyBP7wpN72c?si=kGu1ezIWcgKaBJgH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---

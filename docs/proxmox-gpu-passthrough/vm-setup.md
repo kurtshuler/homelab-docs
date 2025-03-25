@@ -7,8 +7,8 @@ nav_order: 2
 # VM Setup: Proxmox GPU (PCI) Passthrough
 {: .no_toc }
 
-VM setup
-{: .label .label-purple }
+<i class="fab fa-mixer" style="color: #D6762C"></i> Proxmox VM setup
+{: .label .label-proxvm }
 
 ## Table of contents
 {: .no_toc .text-delta }

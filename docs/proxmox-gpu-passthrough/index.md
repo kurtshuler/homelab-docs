@@ -6,11 +6,11 @@ nav_order: 3
 # Proxmox GPU Passthrough
 {: .no_toc }
 
-Proxmox host setup
-{: .label .label-yellow }
+<i class="fab fa-mixer" style="color: black"></i> Proxmox host setup
+{: .label .label-proxhost }
 
-VM setup
-{: .label .label-purple }
+<i class="fab fa-mixer" style="color: #D6762C"></i> Proxmox VM setup
+{: .label .label-proxvm }
 
 This section describes Intel iGPU Hardware Passthrough from the Proxmox host to a virtual machine (VM). Steps need to be performed in two (2) separate systems on the Proxmox server:
 {: .fs-6 .fw-300 }

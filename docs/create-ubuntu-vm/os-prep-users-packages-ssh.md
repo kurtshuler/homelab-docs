@@ -7,8 +7,8 @@ nav_order: 2
 # OS Prep: Users, Packages, and SSH
 {: .no_toc }
 
-Ubuntu OS setup
-{: .label .label-red }
+<i class="fab fa-ubuntu"></i> Ubuntu OS setup
+{: .label .label-ubuntu }
 
 ## Table of contents
 {: .no_toc .text-delta }
