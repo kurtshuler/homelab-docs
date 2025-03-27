@@ -97,6 +97,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 4.4.1)
   jekyll-default-layout
+  jekyll-include-cache
   jekyll-seo-tag
   jekyll-sitemap
   just-the-docs (= 0.10.1)
