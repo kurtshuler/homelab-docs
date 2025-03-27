@@ -12,11 +12,8 @@ nav_order: 3
 <i class="fab fa-mixer" style="color: #D6762C"></i> Proxmox VM setup
 {: .label .label-proxvm }
 
-This section describes Intel iGPU Hardware Passthrough from the Proxmox host to a virtual machine (VM). Steps need to be performed in two (2) separate systems on the Proxmox server:
+This section describes how to enable Intel iGPU Hardware Passthrough from the Proxmox host to a virtual machine (VM). 
 {: .fs-6 .fw-300 }
 
-1. On the Proxmox VE host server
-2. Within each desired VM running on the Proxmox host server
-{: .fs-6 .fw-300 }
-
-Don't lose your place and forget which target you are working on, (1) bare metal Proxmox server or a (2) VM hosted on it, or you'll screw things up!
+{: .important }
+> Don't lose your place and forget which target you are working on, (1) bare metal Proxmox server or a (2) VM hosted on it, or you'll screw things up!

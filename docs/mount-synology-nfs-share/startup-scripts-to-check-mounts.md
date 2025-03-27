@@ -30,9 +30,10 @@ The big issue when this happens is that I will have issues with my Docker media 
 
 The second script automatically starts my media Docker compose at startup once their NFS shares are connected. This allows for an unattended full restart after power losses.
 
-## Source Information
-
-My scripts are derived from [Anand's SimpleHomelab scripts](https://github.com/SimpleHomelab/docker-traefik/tree/master/scripts/hs){:target="_blank"}.
+{: .note-title}
+> Source
+>
+> My scripts are derived from [Anand's SimpleHomelab scripts](https://github.com/SimpleHomelab/docker-traefik/tree/master/scripts/hs){:target="_blank"}.
 
 ## Two files to check mounts at startup
 
@@ -42,10 +43,10 @@ I store them in my `/usr/local/bin/` directory.
 
 | File        | Location         | Purpose |
 |:-------------|:------------------|:------|
-| check-mounts.sh | /usr/local/bin/ | Gives a simple text confirmation that each share is mounted.  |
-| start-media-after-boot.sh | /usr/local/bin/ | Confirms shares are mounted before automatically running Docker media compose at startup. Allows safe restart after power loss and reboot. |
+| `check-mounts.sh` | `/usr/local/bin/` | Gives a simple text confirmation that each share is mounted.  |
+| `start-media-after-boot.sh` | `/usr/local/bin/` | Confirms shares are mounted before automatically running Docker media compose at startup. Allows safe restart after power loss and reboot. |
 
-## `.bashrc` to run these scripts at boot time
+## Why `.bashrc` to run these scripts at boot time?
 
 I tried using `cron` and `systemd` but could not get this to work properly. Eventually, I simply added the scripts to the end of my `.bashrc` file and everything has worked.
 

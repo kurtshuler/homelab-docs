@@ -49,12 +49,11 @@ The Craft Computing video, [Proxmox 8.0 - PCIe Passthrough Tutorial](https://www
 
 ## Make IOMMU changes at boot
 
-{: .note }
->There are two possible boot systems, Systemd (EFI) or Grub.
+{: .important }
+>There are two possible boot systems, **Systemd (EFI)** or **Grub**.
 >
 >The **'Boot Mode'** in the Proxmox GUI summary page for a node (like `pve`) indicates whether it is EFI (systemd) or Grub booted.
 
-I chose to do both the Grub and EFI steps below.
 
 Do
 {: .label .label-green}
@@ -158,7 +157,8 @@ Do
 
 ## Blacklist Proxmox host device drivers
 
-This ensures nothing else on Proxmox can use the GPU that you want to pass through to a VM.
+{: .note }
+> This ensures nothing else on the Proxmox host can use the GPU that you want to pass through to a VM.
 
 1. Edit `/etc/modprobe.d/iommu_unsafe_interrupts.conf`
 

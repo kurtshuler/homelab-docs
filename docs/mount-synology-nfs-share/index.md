@@ -15,4 +15,5 @@ nav_order: 5
 Steps to mount a Synology NAS NFS file share to your Ubuntu Linux VM.
 {: .fs-6 .fw-300 }
 
+{: .note }
 I use Synology NAS NFS file shares for my Plex / arrs setup and for Paperless-NGX. I tried Rclone but it wasn't reliable for me. NFS is native to Linux, unlike SMB which is a Windows technology.

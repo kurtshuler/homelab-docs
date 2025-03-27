@@ -62,7 +62,58 @@ Do
 systemctl status ssh.service
 ```
 
+### Learn about tteck's Proxmox VE scripts
+
+#### Thank tteck
+
+{: .note-title}
+> Who was tteck?
+>
+> tteck was a volunteer who created a ton of scripts to install applications and environments within Proxmox. He did a lot to make Proxmox virtualization easy to use for mere mortals. He passed away November 2024.
+>
+> tteck’s Helper-Scripts are now managed by a group of commuity members.
+>
+> 
+>
+> {: .opaque .fs-2}
+> <div markdown="block">
+> {: .important-title }
+> ***A message from tteck's wife, Angie:*** This is Angie, and to say I am overwhelmed by all the comments, thoughts, love, prayers, and condolences is an understatement. As well as the donations. My husband loved this site, and he was passionate about computers, coding, and all the stuff that goes with it. He showed me a lot of the comments that were made when he posted about his cancer and it made him smile. Thank you all for the love and support that you have shown to him, and now me.
+>He would be amazed that I even found his sight and was able to make a post. Thank you all again, it warms my heart that he touched so many lives.
+> </div>
+> The Ko-Fi link is still available if you want to support Angie and tteck's family (unfortunately I never knew his name):
+> [https://ko-fi.com/proxmoxhelperscripts](https://ko-fi.com/proxmoxhelperscripts){:target="_blank"}
+> 
+> <span class="fs-3">
+> [Honor tteck's Contributions!](https://ko-fi.com/proxmoxhelperscripts){: .btn .btn-green}
+> </span>
+
+{: .note-title }
+>See all tteck's Proxmox scripts
+>
+> You can download and install the Proxmox scripts from [https://community-scripts.github.io/ProxmoxVE/](https://community-scripts.github.io/ProxmoxVE/){:target="_blank"}
+> 
+><span class="fs-3">
+>[Proxmox Scripts Webpage](https://community-scripts.github.io/ProxmoxVE/){: .btn }
+> </span>
+ 
+{: .important }
+>View the Proxmox scripts source code at [https://github.com/community-scripts/ProxmoxVE/](https://github.com/community-scripts/ProxmoxVE/){:target="_blank"}
+<span class="fs-3">
+[Proxmox Scripts Github](https://github.com/community-scripts/ProxmoxVE/){: .btn }
+</span>
+
+
+#### Watch Techno Tim's video
+
+Here is a great video from Techno Tim about the scripts:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kcpu4z5eSEU?si=k5GkGNZ4zJZ-w1kf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### Run tteck's Proxmox VE Post Install Script
+
+{: .note }
+> This script cleans up a lot of cruft after Proxmox installation. Specifically, "this script provides options for managing Proxmox VE repositories, including disabling the Enterprise Repo, adding or correcting PVE sources, enabling the No-Subscription Repo, adding the test Repo, disabling the subscription nag, updating Proxmox VE, and rebooting the system."
 
 {: .warning }
 Run tteck scripts from the **Proxmox GUI shell**, not SSH!
@@ -74,44 +125,8 @@ Do
 bash -c "$(wget -qLO - https://github.com/community-scripts/ProxmoxVE/raw/main/misc/post-pve-install.sh)"
 ```
 
-This script cleans up a lot of cruft after Proxmox installation. Specifically, "this script provides options for managing Proxmox VE repositories, including disabling the Enterprise Repo, adding or correcting PVE sources, enabling the No-Subscription Repo, adding the test Repo, disabling the subscription nag, updating Proxmox VE, and rebooting the system."
-
-{: .note-title}
-> Who was tteck?
->
-> Tteck was a volunteer who created a ton of scripts to install applications and environments within Proxmox. He did a lot to make Proxmox virtualization easy to use for mere mortals. He passed away November 2024.
->
-> *A message from tteck's wife, Angie:*
->
-> {: .opaque .fs-2}
-> <div markdown="block">
-> {: .important-title }
-> This is Angie, and to say I am overwhelmed by all the comments, thoughts, love, prayers, and condolences is an understatement. As well as the donations. My husband loved this site, and he was passionate about computers, coding, and all the stuff that goes with it. He showed me a lot of the comments that were made when he posted about his cancer and it made him smile. Thank you all for the love and support that you have shown to him, and now me.
->He would be amazed that I even found his sight and was able to make a post. Thank you all again, it warms my heart that he touched so many lives.
-> </div>
-> The Ko-Fi link is still available if you want to support Angie and tteck's family (unfortunately I never knew his name):
-> [https://ko-fi.com/proxmoxhelperscripts](https://ko-fi.com/proxmoxhelperscripts){:target="_blank"}
-> 
-> <span class="fs-3">
-> [Honor tteck's Contributions!](https://ko-fi.com/proxmoxhelperscripts){: .btn .btn-green}
-> </span>
-
-tteck's Helper-Scripts are now managed by a group of commuity members.
-
-Here is a great video from Techno Tim about the scripts:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kcpu4z5eSEU?si=k5GkGNZ4zJZ-w1kf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-- Download and install the Proxmox scripts from [https://community-scripts.github.io/ProxmoxVE/](https://community-scripts.github.io/ProxmoxVE/){:target="_blank"}
-<span class="fs-3">
-[Proxmox Scripts Webpage](https://community-scripts.github.io/ProxmoxVE/){: .btn }
-</span>
-
-- View the Proxmox scripts source code at [https://github.com/community-scripts/ProxmoxVE/](https://github.com/community-scripts/ProxmoxVE/){:target="_blank"}
-<span class="fs-3">
-[Proxmox Scripts Github](https://github.com/community-scripts/ProxmoxVE/){: .btn }
-</span>
-
-The script we want is the "Proxmox VE Post Install" script at [https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install](https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install){:target="_blank"}
+{: .note }
+> You can view the "Proxmox VE Post Install" script source code at [https://community-scripts.github.io/ProxmoxVE/scripts?> id=post-pve-install](https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install){:target="_blank"}
 
 ### Run tteck's Proxmox VE Processor Microcode Script
 

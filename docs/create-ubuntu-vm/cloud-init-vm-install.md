@@ -53,31 +53,32 @@ In the steps below, we are going to follow most of tteck's detailed [Cloud-Init 
 > 
 > We will install Docker later using Anand's excellent [SimpleHomelab Deployarr](https://github.com/SimpleHomelab/deployarr){:target="_blank"} application.
 
-### Click on `Cloud-Init` in the VM's vertical middle menu bar
-
+### Click on <mark style="background: #F5F5F5!important">&nbsp;<i class="fas fa-cloud"></i> Cloud-Init&nbsp;</mark> in the VM's vertical middle menu bar
 
 ![images](../../assets/images/VM-settings-Cloud-Init.png)
 
-### Fill in the `Cloud-Init` settings
+### Fill in the Cloud-Init settings
 
 1. Set user to `root`
 2. Give root user a password
 3. Set to `No` (not enough storage, yet)
 4. Set network settings (IP/CIDR and gateway)
-5. Click `Regenerate Image`
+5. Click <mark style="background: #F5F5F5!important">&nbsp;Regenerate Image&nbsp;</mark>
 
     ![images](../../assets/images/VM-settings-Cloud-Init-details3.png){:width="75%"}
 
-6. It is now OK to click `▶ Start` to start the VM!
+6. It is now OK to click <mark style="background: #F5F5F5!important">&nbsp;▶ Start&nbsp;</mark> to start the VM!
+
+<mark style="background: #F5F5F5!important">&nbsp;Marked text&nbsp;</mark>
 
 ## Resize the bootdisk `(/dev/sda)`
 
 This resizes the boot disk but does not allocate it to the VM. We will use `parted` to do that later.
 
-1. Select `xterm.js` under the VM's top nav bar `>_ Console` pull down button for copy/paste functions
-2. Open the 'Resize' screen and enter the size increase you want
+1. Select <mark style="background: #F5F5F5!important">&nbsp; xterm.js &nbsp;</mark> under the VM's top nav bar <mark style="background: #F5F5F5!important">&nbsp;<i class="fas fa-terminal"></i> Console &nbsp;</mark> pull down button for copy/paste functions
+2. Open the <mark style="background: #F5F5F5!important">&nbsp; <i class="fas fa-plus"></i> Resize &nbsp;</mark> screen and enter the size increase you want
  
-    `Hardware` &rarr; `Hard Disk (scsi0)` &rarr; `Disk Action` &rarr; `Resize`
+    <mark style="background: #F5F5F5!important">&nbsp; <i class="fas fa-desktop"></i> Hardware &nbsp;</mark> &rarr; <mark style="background: #F5F5F5!important">&nbsp; <i class="far fa-hdd"></i> Hard Disk (scsi0) &nbsp;</mark>  &rarr; <mark style="background: #F5F5F5!important">&nbsp; Disk Action <i class="fas fa-chevron-down"></i>&nbsp;</mark>  &rarr; <mark style="background: #F5F5F5!important">&nbsp; <i class="fas fa-plus"></i> Resize &nbsp;</mark>
 
 
 ![images](../../assets/images/VM-settings-harddisk-resize2.png){:width="75%"}
