@@ -10,4 +10,4 @@ gem "jekyll-default-layout" # https://github.com/benbalter/jekyll-default-layout
 # gem "jekyll-sitemap" # https://github.com/jekyll/jekyll-sitemap
 # gem "jekyll-include-cache" # https://github.com/benbalter/jekyll-include-cache
 # gem "jekyll-github-metadata" # https://github.com/jekyll/github-metadata
-# gem "jekyll-seo-tag" # https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/installation.md
+gem "jekyll-seo-tag" # https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/installation.md

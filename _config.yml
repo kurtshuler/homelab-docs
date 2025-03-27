@@ -16,7 +16,7 @@ plugins:
  # - jekyll-sitemap # https://github.com/jekyll/jekyll-sitemap
  # - jekyll-include-cache # https://github.com/benbalter/jekyll-include-cache
  # - jekyll-github-metadata # https://github.com/jekyll/github-metadata
- # - jekyll-seo-tag # https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/installation.md
+  - jekyll-seo-tag # https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/installation.md
 
 # Enable or disable the site search
 # Supports true (default) or false
