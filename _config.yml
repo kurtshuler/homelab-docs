@@ -13,7 +13,7 @@ aux_links:
 
 plugins:
   - jekyll-default-layout # https://github.com/benbalter/jekyll-default-layout
- # - jekyll-sitemap # https://github.com/jekyll/jekyll-sitemap
+  - jekyll-sitemap # https://github.com/jekyll/jekyll-sitemap
  # - jekyll-include-cache # https://github.com/benbalter/jekyll-include-cache
  # - jekyll-github-metadata # https://github.com/jekyll/github-metadata
   - jekyll-seo-tag # https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/installation.md
