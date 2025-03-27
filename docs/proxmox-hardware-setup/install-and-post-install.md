@@ -130,6 +130,8 @@ bash -c "$(wget -qLO - https://github.com/community-scripts/ProxmoxVE/raw/main/m
 
 ### Run tteck's Proxmox VE Processor Microcode Script
 
+This procedure updates the microcode on your Intel or AMD processor, if required. Intel and AMD update processor microcode usually to fix bugs and security issues.
+
 {: .warning }
 Run tteck scripts from the **Proxmox GUI shell**, not SSH!
 
@@ -152,7 +154,6 @@ Check whether any microcode updates are currently in effect:
 journalctl -k | grep -E "microcode" | head -n 1
 ```
 
-This procedure updates the microcode on your Intel or AMD processor, if required. Intel and AMD update processor microcode usually to fix bugs and security issues.
 
 ### Set up IKoolcore-specific Proxmox summary (OPTIONAL)
 
