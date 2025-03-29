@@ -71,7 +71,7 @@ upsmon master
 
 ---
 
-## <span style="color: #0067E6"><i class="fas fa-server fa-rotate-90" style="color: black"></i></span><span style="color: #D6762C"> <i class="fab fa-mixer"></i></span> Client & Monitoring Configuration Files
+## <i class="fas fa-server fa-rotate-90" style="color: black"></i> <span style="color: #D6762C"> <i class="fab fa-mixer"></i></span> <i class="fas fa-stethoscope"></i> Client & Monitoring Configuration Files
 
 ### `upsmon.conf`
 - **Purpose**: Monitors UPS status and triggers system shutdown.
@@ -122,7 +122,7 @@ upsmon master
 
 ---
 
-## ⏱️ Event Scheduling and Custom Actions
+## <i class="far fa-clock"></i> Event Scheduling and Custom Actions
 
 ### `upssched.conf`
 - **Purpose**: Provides hooks for custom actions or scripts during UPS events (like power failure or low battery).

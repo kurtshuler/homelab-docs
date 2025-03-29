@@ -30,7 +30,7 @@ There are many online walkthroughs on how to install NUT Server on a Raspberry P
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/HgKeD4320c0?si=R14OKtKQVtaj1woG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## 📑 Configuration files summary table
+## <i class="fas fa-cogs"></i> Configuration files summary table
 
 After installing and experimenting, I became confused on what files are where and what they do. I have documented my setup below to help.
 
@@ -49,7 +49,7 @@ After installing and experimenting, I became confused on what files are where an
 
 ---
 
-## 🔌  Raspberry Pi Server Configuration Files
+## <i class="fas fa-plug"></i> Raspberry Pi Server Configuration Files
 
 My NUT server configuration is simple because I want my Raspberry Pi to run until it dies if it loses power. My `upsmon.conf` only monitors and doesn't require any triggers to execute for shutdown of the NUT server. Therefore, I don't need `upssched.conf` to define triggers and actions or the `upssched-cmd` script to implement them.
 
@@ -103,7 +103,7 @@ LISTEN 0.0.0.0 3493
 ```
 ---
 
-## 🖥️ Monitoring Configuration Files
+## <i class="fas fa-stethoscope"></i> Monitoring Configuration Files
 
 ### `upsmon.conf`
 - **Purpose**: Monitors UPS status and triggers system shutdown.
@@ -127,7 +127,7 @@ LISTEN 0.0.0.0 3493
 
 ---
 
-## 🌐 Web Interface Configuration Files
+## <i class="fas fa-globe"></i> Web Interface Configuration Files
 
 ### `hosts.conf`
 - **Purpose**: Lists UPS devices for use in the web interface (e.g., `upsstats.cgi`, `upsset.cgi`).
