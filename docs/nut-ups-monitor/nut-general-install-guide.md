@@ -31,11 +31,13 @@ I got confused installing NUT. This information helped. Read it before trying to
 1. My main source is Techno Tim's excellent [Network UPS Tools (NUT) Ultimate Guide](https://technotim.live/posts/NUT-server-guide/){:target="_blank"} and video.
 
 2. I used the [NUTandRpi script](https://github.com/dzomaya/NUTandRpi){:target="_blank"} to install NUT Server to my Raspberry Pi.
-   1. Techno Tim's [NUTandRpi script instructions](https://technotim.live/posts/nut-server-script/){:target="_blank"} instructions and video are very helpful.
+   1. Techno Tim's [NUTandRpi script instructions](https://technotim.live/posts/nut-server-script/){:target="_blank"} instructions and video for using the script are very helpful.
 
-3. The [Network UPS Tools User Manual](https://networkupstools.org/docs/user-manual.chunked/index.html){:target="_blank"} is excellent but VERY detailed. Watch Techno Tim's videos before you try to make sense of the docs!
+3. I relied on Zanshin Dojo's [Synology + Proxmox + NUT UPS](https://blog.zanshindojo.org/nut/){:target="_blank"} article to set up the Synology NAS as a NUT client.
 
-4. My [NUT Config File Reference](docs/nut-ups-monitor/nut-config-file-reference.md){:target="_blank"} page in this doc is my attempt to distill the NUT user manual into a quick reference for my use.
+4. The [Network UPS Tools User Manual](https://networkupstools.org/docs/user-manual.chunked/index.html){:target="_blank"} is excellent but VERY detailed. Watch Techno Tim's videos before you try to make sense of the docs!
+
+5. My [NUT Config File Reference](docs/nut-ups-monitor/nut-config-file-reference.md){:target="_blank"} page in this doc is my attempt to distill the NUT user manual into a quick reference for my use.
 
 ---
 
@@ -119,4 +121,3 @@ flowchart LR
 ## Summary
 
 The diagram illustrates how NUT components interact to deliver reliable UPS monitoring and coordinated system shutdowns. The `upsd` service is the central piece that shares UPS data, while `upsmon` ensures appropriate response on both server and client systems. Optional scheduling scripts can add even more flexibility.
-

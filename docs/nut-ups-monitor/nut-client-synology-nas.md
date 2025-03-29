@@ -7,6 +7,9 @@ nav_order: 4
 # <i class="fas fa-server fa-rotate-90"></i> NUT Client - Synology NAS
 {: .no_toc }
 
+<i class="fas fa-power-off"></i> NUT UPS setup
+{: .label .label-rasp } 
+
 <i class="fas fa-server fa-rotate-90" style="color: black"></i> Synology NAS setup
 {: .label .label-syno }
 
@@ -17,173 +20,49 @@ nav_order: 4
 {:toc}
 
 ---
+## Source
 
-## Motivation
+Zanshin Dojo's [Synology + Proxmox + NUT UPS](https://blog.zanshindojo.org/nut/){:target="_blank"} is very helpful and is one of the few clear articles I found about how to set up a Synology NAS as a client only, and not as a NUT server.
 
-I have sometimes had issues where my Linux OS did not mount the Synology NAS NFS share folders at startup, sometimes due to NAS issues and other times due to Linux OS or VM issues. To help address this, I run two scripts that check my two mounted NAS NFS shares every time my computer boots.
+---
 
-### Check mounts before Docker tries to access them
+<i class="fas fa-power-off"></i> NUT UPS setup
+{: .label .label-rasp } 
 
-The big issue when this happens is that I will have issues with my Docker media containers and not know why. The second script helps ensure my Synology NAS NFS media shares are connected properly **before** Docker containers that use then are started.
+## Synology NAS configuration pre-work on NUT server
 
-### Safer recovery from power loss
+Synology's DSM OS has a built-in NUT client monitor that doesn't require any SSH file editing. However, the NUT **server** has to be set up properly because Synology's client is hardcoded to use specific NUT UPS and user names.
 
-The second script automatically starts my media Docker compose at startup once their NFS shares are connected. This allows for an unattended full restart after power losses.
+### Ensure your NUT Server has the proper UPS and user names
 
-## Source Information
+{: .warning }
+>You have to name things as below or the Synology will refuse to connect. They can't be called anything else.
 
-My scripts are derived from [Anand's SimpleHomelab scripts](https://github.com/SimpleHomelab/docker-traefik/tree/master/scripts/hs){:target="_blank"}.
+1. UPS name in the `ups.conf` file on the NUT server must be called `ups`.
+2. User name in the `upsd.users` file on the NUT server must be called `admin` with password `secret`.
 
-## Two files to check mounts at startup
+{: .note }
+>
+> The instructions in this document already name things so that the NUT server will work with the Synology NUT client.
 
-I run two different files at startup by including them at the end of my `.bashrc` file.
+---
 
-I store them in my `/usr/local/bin/` directory.
+<i class="fas fa-server fa-rotate-90" style="color: black"></i> Synology NAS setup
+{: .label .label-syno }
 
-| File        | Location         | Purpose |
-|:-------------|:------------------|:------|
-| check-mounts.sh | /usr/local/bin/ | Gives a simple text confirmation that each share is mounted.  |
-| start-media-after-boot.sh | /usr/local/bin/ | Confirms shares are mounted before automatically running Docker media compose at startup. Allows safe restart after power loss and reboot. |
+## Set up UPS client in the Synology DSM UI
 
-## `.bashrc` to run these scripts at boot time
+### Enter your NUT server's IP address into the Synology DSM UPS screen in <mark>Control Panel</mark>
+ 
 
-I tried using `cron` and `systemd` but could not get this to work properly. Eventually, I simply added the scripts to the end of my `.bashrc` file and everything has worked.
+Click:  
 
-In the `.bashrc` file, I use the following text to run them at startup:
+<mark>&nbsp; <i class="fas fa-lightbulb"></i> Hardware & Power &nbsp;</mark> &rarr; <mark>&nbsp; UPS &nbsp;</mark> 
 
-```bash
-source /usr/local/bin/check-mounts.sh
-source /usr/local/bin/start-media-after-boot.sh
-```
+Fill the screen out like below:
 
-Having them in the `.bashrc` also makes it easier for me to find the script files later to edit them or run them manually.
+![images](../../assets/images/synology-nas-nut-client-setup.png)
 
-## Create and use `check-mounts.sh`
+### Check the NAS connection to your UPS by clicking <mark>Device Information</mark> and reviewing the table in the popup:
 
-### `check-mounts.sh` sample output
-
-```sh
-/mnt/nas mounted.
-/mnt/paperless mounted.
-All drives mounted.
-```
-
-Do
-{: .label .label-green}
-
-### `check-mounts.sh` source code
-
-Here is the source code for the version of this script running on my Docker media server.
-
-```bash
-#!/bin/bash
-# This script checks for all required drive mounts. It is stripped down source code from
-# Anand's SimpleHomelab at https://github.com/SimpleHomelab/docker-traefik/tree/master/scripts/hs
-
-# Add your mount points here
-hdd1="/mnt/nas"
-hdd2="/mnt/paperless"
-num_drives=2
-
-mounted=0
-notmounted=""
-
-# Check if first mount point is connected and echo status 
-if mount | grep ${hdd1} > /dev/null; then
-	mounted=$((mounted+1))
-	echo -e ${hdd1}' mounted.'
-else 
-	echo -e ${hdd1}' not mounted.'
-	notmounted="${notmounted} ${hdd1}\n"
-fi
-
-# Check if second mount point is connected and echo status 
-if mount | grep ${hdd2} > /dev/null; then
-	mounted=$((mounted+1))
-	echo -e ${hdd2}' mounted.'
-else 
-	echo -e ${hdd2}' not mounted.'
-	notmounted="${notmounted} ${hdd2}\n"
-fi
-
-# Echo status summary
-if [[ "$mounted" -ne "$num_drives" ]]; then
-	echo -e "These drives are not mounted properly:\n\n${notmounted}\n\." 
-else
-	echo "All drives mounted." 
-fi
-```
-
-
-## Create and use `start-media-after-boot.sh`
-
-Do
-{: .label .label-green}
-
-### `start-media-after-boot.sh` source code
-
-```bash
-#!/bin/bash
-# All containers (profile "media") that access NFS mounts are set to NOT restart automatically at boot
-# time. This is because, it can take a few seconds to mount remote drives.
-# This script checks the required mounts every 5 seconds and as soon as required drives are mounted, it starts the "media" containers.
-#
-# This script is stripped down source code from Anand's SimpleHomelab at
-# https://github.com/SimpleHomelab/docker-traefik/tree/master/scripts/hs
-
-# CHECKING FOR DRIVE MOUNTS
-num_drives=2 # number of mounts to check
-# Drive 1 - UDMS media drive on Synology NAS
-drive1="/mnt/nas"
-drive1_seconds=0
-drive1_status=0
-# Drive 2 - Paperless docs drive on Synology NAS
-drive2="/mnt/paperless"
-drive2_seconds=0
-drive2_status=0
-
-mounted=0
-rounds=0
-
-while [[ "$mounted" -ne "$num_drives" ]]; do
-	echo -e "round $rounds\n" # for testing
-	if [[ "$(systemctl is-active docker)" == "active" ]]; then
-		# Drive 1
-		if mount | grep ${drive1} > /dev/null; then
-			if [[ "$drive1_status" -eq 0 ]]; then
-				mounted=$((mounted+1))
-				drive1_seconds=$((rounds * 5))
-				drive1_status=1
-			fi
-		fi
-		# Drive 2
-		if mount | grep ${drive2} > /dev/null; then
-			if [[ "$drive2_status" -eq 0 ]]; then
-				mounted=$((mounted+1))
-				drive2_seconds=$((rounds * 5))
-				drive2_status=1
-			fi
-		fi
-		# Timeout if mounting is not successful after 15 min (180x5)
-		if [[ $rounds -eq 180 ]]; then
-		break
-		fi
-		sleep 5
-		rounds=$((rounds + 1))
-	fi
-done
-
-seconds=$((rounds * 5))
-echo "seconds $seconds" # for testing
-
-# Check mount status, echo a notification, and bring Docker up or down
-if [[ "$mounted" -eq "$num_drives" ]]; then
-	# echo "equal"
-	echo -e "### `date +'%Y-%m-%d %H:%M'` ### \n\n All drives mounted: \n\n - $drive1 in $drive1_seconds\n\n - $drive2 in $drive2_seconds\n\nStarting media containers."
-	docker compose --profile media -f /home/kurt/docker/docker-compose-udms.yml up -d
-else
-	# echo "not equal"
-	echo -e "### `date +'%Y-%m-%d %H:%M'` ### \n\n Not all drives mounted after reboot: \n\n - $drive1 is $drive1_status\n\nTimed out after $seconds seconds." | mail -s "[$HOSTNAME] Mounted not equal to $num_drives."
-	docker compose --profile media -f /home/kurt/docker/docker-compose-udms.yml down
-fi
-```
+![images](../../assets/images/synology-nas-nut-client-check.png)
