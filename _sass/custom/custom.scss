@@ -1,4 +1,4 @@
-
+// custom SCSS (or CSS) goes here
 // custom label definitiions are in HERE in _sass/custom/custom.scss
 // custom label colors are in _sass/custom/setup.scss
 
@@ -26,3 +26,6 @@
 .label-ubuntu:not(g) {
     background-color: $ubun-000;
   }
+
+// Change highlight color to gray for use as button indicator in text
+mark {background: #E8E8E8!important}
