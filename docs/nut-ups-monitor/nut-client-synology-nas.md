@@ -33,10 +33,11 @@ Zanshin Dojo's [Synology + Proxmox + NUT UPS](https://blog.zanshindojo.org/nut/)
 
 Synology's DSM OS has a built-in NUT client monitor that doesn't require any SSH file editing. However, the NUT **server** has to be set up properly because Synology's client is hardcoded to use specific NUT UPS and user names.
 
-### Ensure your NUT Server has the proper UPS and user names
-
 {: .warning }
 >You have to name things as below or the Synology will refuse to connect. They can't be called anything else.
+
+### Ensure your NUT Server has the proper UPS and user names
+
 
 1. UPS name in the `ups.conf` file on the NUT server must be called `ups`.
 2. User name in the `upsd.users` file on the NUT server must be called `admin` with password `secret`.
