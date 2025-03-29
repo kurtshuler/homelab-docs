@@ -155,7 +155,7 @@ journalctl -k | grep -E "microcode" | head -n 1
 ```
 
 
-### Set up IKoolcore-specific Proxmox summary (OPTIONAL)
+### Set up iKoolcore-specific Proxmox summary (OPTIONAL)
 
 {: .note}
 > These instructions are specific to my iKoolcore R2 server hardware. Don't do it if you aren't installing on one.

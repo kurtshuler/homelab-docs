@@ -39,8 +39,8 @@ Synology's DSM OS has a built-in NUT client monitor that doesn't require any SSH
 ### Ensure your NUT Server has the proper UPS and user names
 
 
-1. UPS name in the `ups.conf` file on the NUT server must be called `ups`.
-2. User name in the `upsd.users` file on the NUT server must be called `admin` with password `secret`.
+1. A **UPS** name in the `ups.conf` file on the NUT server must be called `ups`.
+2. A **user** name in the `upsd.users` file on the NUT server must be called `admin` with password `secret`.
 
 {: .note }
 >
