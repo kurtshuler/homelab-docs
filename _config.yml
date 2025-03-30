@@ -7,6 +7,12 @@ url: https://kurtshuler.github.io/homelab-docs/
 # Set a path/url to a favicon that will be displayed by the browser
 favicon_ico: "/assets/images/favicon.ico"
 
+# Google Analytics Tracking (optional)
+# Supports a CSV of tracking ID strings (eg. "UA-1234567-89,G-1AB234CDE5")
+ga_tracking: G-66J7ZT5QZ4
+ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
+
+
 
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
