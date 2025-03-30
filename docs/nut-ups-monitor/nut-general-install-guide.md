@@ -43,7 +43,7 @@ I got confused installing NUT. This information helped. Read it before trying to
 
 ## <i class="fas fa-project-diagram"></i> NUT Server/Client Interaction Diagram
 
-I created this detailed diagram of how a Network UPS Tools (NUT) **server** communicates with one or more **clients** because I would become confused troubleshooting my NUT setup. It shows how configuration files and services work together to monitor power status and coordinate safe shutdowns during power events.
+I created this diagram of how a Network UPS Tools (NUT) **server** communicates with one or more **clients** because I would become confused troubleshooting my NUT setup. It shows how configuration files and services work together to monitor power status and coordinate safe shutdowns during power events.
 ```mermaid
 flowchart LR
   subgraph NUT_Server [NUT Server]

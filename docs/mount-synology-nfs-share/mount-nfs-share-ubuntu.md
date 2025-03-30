@@ -20,7 +20,7 @@ nav_order: 2
 
 ## Source Information
 
-There are many online walkthroughs on how to create a Synology NFS share, get its mount point for use in a Linux client's `fstab`, and implement `fstab` for mounting. One of the better ones I have found is [Setting up NFS on a Synology NAS at PiMyLifeUp](https://pimylifeup.com/synology-nas-nfs/){:target="_blank"}. The information below is based on multiple source and describes the implementation on one of my servers.
+There are many online walkthroughs on how to create a Synology NFS share, get its mount point for use in a Linux client's `fstab`, and implement `fstab` for mounting. One of the better ones I have found is [Setting up NFS on a Synology NAS at PiMyLifeUp](https://pimylifeup.com/synology-nas-nfs/){:target="_blank"}. The information below is based on multiple sources and describes the implementation on one of my servers.
 
 {: .note }
 > We will be using Ubuntu Linux `fstab` so that our Linux OS VM will mount the Synology NFS share every time the OS boots.

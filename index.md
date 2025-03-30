@@ -2,31 +2,33 @@
 title: Home
 layout: home
 nav_order: 1
-description: "Just the Docs is a responsive Jekyll theme with built-in search that is easily customizable and hosted on GitHub Pages."
+description: "Kurt's Homelab Setup Docs."
 permalink: /
 ---
 
-# Focus on writing good documentation
+# Kurt's Homelab Setup Docs
 {: .fs-9 }
 
-Just the Docs gives your documentation a jumpstart with a responsive Jekyll theme that is easily customizable and hosted on GitHub Pages.
+I created this to document the steps I took to create my homelab. It might also be useful to others.
 {: .fs-6 .fw-300 }
-
-[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[View it on GitHub][Just the Docs repo]{: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
-{: .warning }
-> This website documents the features of the current `main` branch of the Just the Docs theme. See [the CHANGELOG]({% link CHANGELOG.md %}) for a list of releases, new features, and bug fixes.
+This site documents in detail how I set up my homelab. My first tranche of documentation concerns setting up my servers that host the VMs, and optimizing my experience with services like:
 
-Just the Docs is a theme for generating static websites with [Jekyll]. You can write source files for your web pages using [Markdown], the [Liquid] templating language, and HTML.[^1] Jekyll builds your site by converting all files that have [front matter] to HTML. Your [Jekyll configuration] file determines which theme to use, and sets general parameters for your site, such as the URL of its home page.
+- **Hardware GPU transcode:** [<i class="fas fa-microchip" style="color: #2B66AF"></i> GPU hardware passthrough ]({% link docs/proxmox-gpu-passthrough/index.md %}) from my Proxmox VE host to individual VMs to accelerate my Docker-based Plex hardware transcode
+- **Alerts** that tell me when there are issues with [<i class="fab fa-mixer" style="color: #D6762C"></i> Proxmox]({% link docs/proxmox-hardware-setup/proxmox-alerts-setup.md %}), my [power supply and <i class="fas fa-battery-three-quarters" style="color: gray"></i> UPS]({% link docs/nut-ups-monitor/index.md  %}), or my [<i class="fas fa-server fa-rotate-90" style="color: black"></i> Synology NAS shared folders]({% link docs/mount-synology-nfs-share/startup-scripts-to-check-mounts.md %}).
+- **Backup:** [<i class="fab fa-mixer" style="color: gray"></i> Proxmox Backup Server (PBS)]({% link docs/proxmox-backup-server-on-synology-nas/index.md %}) running on my Synology NAS.
 
-Jekyll builds this Just the Docs theme docs website using the theme itself. These web pages show how your web pages will look *by default* when you use this theme. But you can easily *[customize]* the theme to make them look completely different!
+---
 
-Browse the docs to learn more about how to use this theme.
+In the future I will add documentation for:
 
-## Getting started
-
-The [Just the Docs Template] provides the simplest, quickest, and easiest way to create a new website that uses the Just the Docs theme. To get started with creating a site, just click "[use the template]"!
-
+- ***Ultimate Docker Media Stack (UDMS)*** setup using [Anand's SimpleHomelab Deployarr app](https://www.simplehomelab.com/deployarr/){:target="_blank"}
+    
+    {: .important }
+    >
+    > Anand's paid script is not required, but it does save tons of time. All the code required to create the stack is available at [Anand's SimpleHomelab website](https://www.simplehomelab.com/deployarr/){:target="_blank"}. I recommend this site because it requires you to learn about the technologies as you use them.
+- ***Unifi UDM Pro*** network setup
+- ***Home Assistant OS (HAOS)*** setup within a Proxmox LXC
+- ***Paperless-NGX*** setup

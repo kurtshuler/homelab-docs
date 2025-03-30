@@ -19,7 +19,8 @@ nav_order: 3
 ---
 These instructions are for setting up the terminal for a Linux OS, like Ubuntu, running in a Proxmox VM or LXC.
 
-I use additional bash aliases from [Anand's SimpleHomelab](https://github.com/SimpleHomelab/docker-traefik/blob/master/shared/config/bash_aliases){:target="_blank"} when I have a Linux VM or LXC running Docker. These aliases greatly simplify Docker management and are installed using Anand's excellent [SimpleHomelab Deployarr](https://github.com/SimpleHomelab/deployarr){:target="_blank"} application.
+{: .note }
+> I use additional bash aliases from [Anand's SimpleHomelab](https://github.com/SimpleHomelab/docker-traefik/blob/master/shared/config/bash_aliases){:target="_blank"} when I have a Linux VM or LXC running Docker. These aliases greatly simplify Docker management and are installed using Anand's excellent [SimpleHomelab Deployarr](https://github.com/SimpleHomelab/deployarr){:target="_blank"} application.
 
 Do
 {: .label .label-green}

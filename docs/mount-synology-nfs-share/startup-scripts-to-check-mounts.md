@@ -22,11 +22,11 @@ nav_order: 3
 
 I have sometimes had issues where my Linux OS did not mount the Synology NAS NFS share folders at startup, sometimes due to NAS issues and other times due to Linux OS or VM issues. To help address this, I run two scripts that check my two mounted NAS NFS shares every time my computer boots.
 
-### Check mounts before Docker tries to access them
+### Benefit #1: Check mounts before Docker tries to access them
 
 The big issue when this happens is that I will have issues with my Docker media containers and not know why. The second script helps ensure my Synology NAS NFS media shares are connected properly **before** Docker containers that use them are started.
 
-### Safer recovery from power loss
+### Benefit #2: Safer recovery from power loss
 
 The second script automatically starts my media Docker compose at startup once their NFS shares are connected. This allows for an unattended full restart after power losses.
 
