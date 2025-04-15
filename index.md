@@ -22,6 +22,17 @@ This site documents in detail how I set up my homelab. My first tranche of docum
 
 ---
 
+{: .note-title}
+> PROPS to Anand @ SimpleHomeLab!
+>
+> I first got involve in homelabbing about a year ago when I stumbled upon Anand's [SimpleHomeLab website](https://www.simplehomelab.com/){:target="_blank"} and started tinkering with Docker. His site and videos are the most cogent explantion of all of this. And Anand is very active and helpful on the SimpleHomeLab Discord server, as are the great members there. Highly recommended. Thank you Anand and the SimpleHomeLab gang!
+>
+> - GitHub: [https://github.com/SimpleHomelab](https://github.com/SimpleHomelab){:target="_blank"} 
+> - Website: [https://www.simplehomelab.com/](https://www.simplehomelab.com/){:target="_blank"} 
+> - YouTube: [https://www.youtube.com/@Simple-Homelab](https://www.youtube.com/@Simple-Homelab){:target="_blank"} 
+
+----
+
 In the future I will add documentation for:
 
 - ***Ultimate Docker Media Stack (UDMS)*** setup using [Anand's SimpleHomelab Deployarr app](https://www.simplehomelab.com/deployarr/){:target="_blank"}
