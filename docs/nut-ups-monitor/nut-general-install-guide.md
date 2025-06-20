@@ -99,7 +99,7 @@ flowchart LR
 ### <i class="fas fa-globe"></i> Network Connection:
 - The server's `upsd` listens on port 3493 and sends status updates to `upsmon` processes running on clients.
 
-### <i class="fas fa-server fa-rotate-90" style="color: black"></i> <span style="color: #D6762C"> <i class="fab fa-mixer"></i></span> On the NUT Client:
+### <i class="fas fa-server fa-rotate-90" style="color: black"></i> <span style="color: #D6762C"> <i class="fab fa-mixer"></i></span> On each NUT Client:
 - **`nut.conf`**: Declares the client role (`MODE=netclient`).
 - **`upsmon.conf`**: Configures connection to the server and sets the client as a `slave`.
 - **`upsmon`**: Listens to UPS events sent by the server’s `upsd` and initiates shutdowns or logging.
