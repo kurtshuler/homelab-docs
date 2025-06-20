@@ -31,7 +31,7 @@ I got confused installing NUT. This information helped. Read it before trying to
 1. My main source is Techno Tim's excellent [Network UPS Tools (NUT) Ultimate Guide](https://technotim.live/posts/NUT-server-guide/){:target="_blank"} and video.
 
 2. I used the [NUTandRpi script](https://github.com/dzomaya/NUTandRpi){:target="_blank"} to install NUT Server to my Raspberry Pi.
-   1. Techno Tim's [NUTandRpi script instructions](https://technotim.live/posts/nut-server-script/){:target="_blank"} instructions and video for using the script are very helpful.
+   1. Techno Tim's [NUTandRpi script instructions](https://technotim.live/posts/nut-server-script/){:target="_blank"} and video for using the script are very helpful.
 
 3. I relied on Zanshin Dojo's [Synology + Proxmox + NUT UPS](https://blog.zanshindojo.org/nut/){:target="_blank"} article to set up the Synology NAS as a NUT client.
 
