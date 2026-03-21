@@ -3,7 +3,7 @@ title: System Architecture
 nav_order: 2
 ---
 
-# <i class="fab fa-network" style="color: #D6762C"></i> System Architecture
+# <i class="fas fa-network" style="color: #D6762C"></i> System Architecture
 {: .no_toc }
 
 <i class="fab fa-mixer" style="color: black"></i> Proxmox host setup
