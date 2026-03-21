@@ -21,16 +21,10 @@ nav_order: 1
 
 The diagram below shows the physical network architecture.
 
-![images](../../assets/images/VM-settings-harddisk-resize2.png){:width="75%"}
+![images](../../assets/images/kurt_network_physical_v2.svg){:width="75%"}
 
-### Make a bootable Ventoy USB drive
+## Software Stack
 
-First, we need to create bootable USB drive with the Proxmox VE ISO. We will use Ventoy to do this.
+The diagram below shows the software stack.
 
-The latest Ventoy installers are at [https://sourceforge.net/projects/ventoy/files/](https://sourceforge.net/projects/ventoy/files/){:target="_blank"}.
-
-{: .important }
->The Ventoy USB can be created in Linux or Windows only. For **Mac**, use Parallels Windows VM or Linux VM.
->
-> **After** you have created the Ventoy USB, you can **copy files to it** using your Mac or PC.
-
+![images](../../assets/images/kurt_software_stack_v2.svg){:width="75%"}
