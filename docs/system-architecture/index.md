@@ -3,8 +3,8 @@ title: System Architecture
 nav_order: 2
 ---
 
-# <i class="fab fa-chart-network" style="color: #D6762C"></i> System Architecture
+# <i class="fab fa-network-wired" style="color: #D6762C"></i> System Architecture
 {: .no_toc }
 
-These are the baseline setup steps I take with any Proxmox VE bare metal install.
+This chapter shows my physical network architecture and what software runs on which server.
 {: .fs-6 .fw-300 }
