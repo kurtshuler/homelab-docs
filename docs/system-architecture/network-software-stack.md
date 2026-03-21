@@ -4,7 +4,7 @@ parent: System Architecture
 nav_order: 1
 ---
 
-# <i class="fas fa-compact-disc"></i> Network & Software Architecture
+# <i class="fas fa-network-wired"></i> Network & Software Architecture
 {: .no_toc }
 
 
