@@ -1,6 +1,6 @@
 ---
 title: Proxmox Hardware Setup
-nav_order: 2
+nav_order: 3
 ---
 
 # <i class="fab fa-mixer" style="color: #D6762C"></i> Proxmox Hardware Setup

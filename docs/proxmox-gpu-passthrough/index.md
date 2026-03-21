@@ -1,6 +1,6 @@
 ---
 title: Proxmox GPU Passthrough
-nav_order: 3
+nav_order: 4
 ---
 
 # <i class="fas fa-microchip" style="color: #2B66AF"></i> Proxmox GPU Passthrough

@@ -1,6 +1,6 @@
 ---
 title: Proxmox Backup Server (PBS) on Synology NAS
-nav_order: 7
+nav_order: 8
 ---
 
 # <i class="fab fa-mixer" style="color: grey"></i>Proxmox Backup Server (PBS) on Synology NAS

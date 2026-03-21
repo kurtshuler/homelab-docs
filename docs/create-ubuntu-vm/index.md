@@ -1,6 +1,6 @@
 ---
 title: Create Linux VM
-nav_order: 4
+nav_order: 5
 ---
 
 # <i class="fab fa-ubuntu" style="color: #E95420"></i> Create Ubuntu Linux VM

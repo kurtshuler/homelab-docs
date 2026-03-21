@@ -1,7 +1,7 @@
 ---
 layout: default
 title: NUT UPS Monitor
-nav_order: 6
+nav_order: 7
 ---
 
 # <i class="fas fa-battery-three-quarters" style="color: gray"></i> Network UPS Tools (NUT) UPS Monitor
