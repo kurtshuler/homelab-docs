@@ -18,4 +18,4 @@ nav_order: 1
 
 ---
 
-There are many online walkthroughs on how to create a Synology NFS share and get its mount point for use in a Linux client's `fstab` for mounting. One of the better ones I have found is [Setting up NFS on a Synology NAS at PiMyLifeUp](https://pimylifeup.com/synology-nas-nfs/){:target="_blank"}. Rather than repeat the info here, please fo there to get the steps.
+There are many online walkthroughs on how to create a Synology NFS share and get its mount point for use in a Linux client's `fstab` for mounting. One of the better ones I have found is [Setting up NFS on a Synology NAS at PiMyLifeUp](https://pimylifeup.com/synology-nas-nfs/){:target="_blank"}. Rather than repeat the info here, please go there to get the steps.

@@ -31,7 +31,7 @@ I got confused installing NUT. This information helped. Read it before trying to
 1. My main source is Techno Tim's excellent [Network UPS Tools (NUT) Ultimate Guide](https://technotim.live/posts/NUT-server-guide/){:target="_blank"} and video.
 
 2. I used the [NUTandRpi script](https://github.com/dzomaya/NUTandRpi){:target="_blank"} to install NUT Server to my Raspberry Pi.
-   1. Techno Tim's [NUTandRpi script instructions](https://technotim.live/posts/nut-server-script/){:target="_blank"} instructions and video for using the script are very helpful.
+   1. Techno Tim's [NUTandRpi script instructions](https://technotim.live/posts/nut-server-script/){:target="_blank"} and video for using the script are very helpful.
 
 3. I relied on Zanshin Dojo's [Synology + Proxmox + NUT UPS](https://blog.zanshindojo.org/nut/){:target="_blank"} article to set up the Synology NAS as a NUT client.
 
@@ -99,7 +99,7 @@ flowchart LR
 ### <i class="fas fa-globe"></i> Network Connection:
 - The server's `upsd` listens on port 3493 and sends status updates to `upsmon` processes running on clients.
 
-### <i class="fas fa-server fa-rotate-90" style="color: black"></i> <span style="color: #D6762C"> <i class="fab fa-mixer"></i></span> On the NUT Client:
+### <i class="fas fa-server fa-rotate-90" style="color: black"></i> <span style="color: #D6762C"> <i class="fab fa-mixer"></i></span> On each NUT Client:
 - **`nut.conf`**: Declares the client role (`MODE=netclient`).
 - **`upsmon.conf`**: Configures connection to the server and sets the client as a `slave`.
 - **`upsmon`**: Listens to UPS events sent by the server’s `upsd` and initiates shutdowns or logging.
