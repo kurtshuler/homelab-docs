@@ -21,10 +21,10 @@ nav_order: 1
 
 The diagram below shows the physical network architecture.
 
-![images](../../assets/images/kurt_network_physical_v2.svg){:width="100%"}
+![images](../../assets/images/kurt_network_physical_v2-cropped.svg){:width="100%"}
 
 ## Software Stack
 
 The diagram below shows the software stack.
 
-![images](../../assets/images/kurt_software_stack_v2.svg){:width="100%"}
+![images](../../assets/images/kurt_software_stack_v2-cropped.svg){:width="100%"}
