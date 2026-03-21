@@ -1,10 +1,10 @@
 ---
-title: Network Architecture and Software Stack
+title: Network & Software Architecture
 parent: System Architecture
 nav_order: 1
 ---
 
-# <i class="fas fa-compact-disc"></i> Network Architecture and Software Stack
+# <i class="fas fa-compact-disc"></i> Network & Software Architecture
 {: .no_toc }
 
 
