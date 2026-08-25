@@ -89,18 +89,54 @@ LISTEN 0.0.0.0 3493
 - **Location**: `/etc/nut/upsd.users`
 - **My file**:
 
-    ```config
-    # This is the NUT SERVER user on the Blackberry Pi host and 
-    # the NUT CLIENT user on the Synology NAS
-    [monuser]
-      password = secret
-      admin master
+```config
+# This host's own upsmon, running as the primary.
+# Must match the username in this host's upsmon.conf MONITOR line.
+[admin]
+  password = secret
+  upsmon master
 
-    # This is the CLIENT user on the other systems (Proxmox machines)
-    [upsmon]
-      password = secret
-      upsmon slave
+# The Synology NAS client. DSM connects as a secondary and
+# authenticates as monuser. That name is hardcoded in DSM.
+[monuser]
+  password = secret
+  upsmon slave
+
+# The client user on the other systems (Proxmox machines)
+[upsmon]
+  password = secret
+  upsmon slave
 ```
+
+{: .warning }
+> **Corrected 2026-08-25.** Earlier versions of this page showed `[monuser]` containing a line reading `admin master`. That is not valid `upsd.users` syntax. The only directives this file accepts are `password`, `actions`, `instcmds`, and `upsmon primary|secondary` (the legacy spellings `master|slave` still work in NUT 2.8).
+>
+> The consequence of the bad line was that `[monuser]` had **no** upsmon privilege and `[admin]` did not exist at all, so every LOGIN was refused. Anonymous reads kept working the whole time, which is why nothing looked wrong: the `upsstats.cgi` page, Home Assistant, and the Synology status display all showed correct live data. What was silently broken was the primary/secondary registration that coordinated shutdown depends on. This went unnoticed from March 2025 until August 2026.
+
+{: .note }
+> **Verifying this file is correct.** A misconfiguration here has no visible symptom outside the logs, so check it explicitly.
+>
+> On the client side, a bad username or privilege shows up in `journalctl -u nut-monitor` as:
+>
+> ```
+> Login on UPS [ups@localhost] failed - got [ERR ACCESS-DENIED]
+> ```
+>
+> On the server side, `upsd` logs successful logins but **not** failed ones, so the absence of a success line is the only signal. Confirm every client with:
+>
+> ```sh
+> sudo journalctl -u nut-server | grep "logged into"
+> ```
+>
+> You should get one line per client, for example:
+>
+> ```
+> User admin@127.0.0.1      logged into UPS [ups]
+> User upsmon@192.168.0.110 logged into UPS [ups]
+> User upsmon@192.168.0.120 logged into UPS [ups]
+> User monuser@192.168.0.5  logged into UPS [ups]
+> ```
+
 ---
 
 ## <i class="fas fa-stethoscope"></i> Monitoring Configuration Files
@@ -109,10 +145,18 @@ LISTEN 0.0.0.0 3493
 - **Purpose**: Monitors UPS status and triggers system shutdown.
 - **Used by**: `upsmon`
 - **Location**: `/etc/nut/upsmon.conf`
-- **My file** (client):
+- **My file** (this host's own monitor):
   ```sh
   MONITOR ups@localhost 1 admin secret master
   ```
+
+{: .note }
+> The username on this line (`admin`) must exist in `upsd.users` with `upsmon master`. If the two files disagree, `upsmon` will still poll UPS status successfully and report `Communications with UPS established`, while its LOGIN is refused. Do not read that message as proof the configuration is good.
+
+{: .note }
+> There is deliberately no `SHUTDOWNCMD` in this file. This Pi is the monitor for everything else, so I want it to stay up as long as the battery lasts rather than shut itself down. `upsmon` will log `Warning: no shutdown command defined!` on every start. That warning is expected here.
+>
+> The trade-off is that the Pi loses power uncleanly when the battery finally runs out, which is a known way to kill an SD card. Add a `SHUTDOWNCMD` if you would rather protect the card than maximise monitoring time.
 
 ---
 
@@ -137,6 +181,9 @@ LISTEN 0.0.0.0 3493
   ```config
   MONITOR ups@localhost "Sotelo Computer Cabinet UPS"
   ```
+
+{: .note }
+> The CGI tools reach `upsd` over loopback, as this `MONITOR` line shows. The web interface does **not** need to be on a different IP address or network interface from the NUT server, and both can serve from the same address. Verified 2026-08-25 serving `https://192.168.0.10/cgi-bin/nut/upsstats.cgi` with `upsd` on the same host.
 
 ---
 
